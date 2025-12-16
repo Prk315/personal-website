@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Library - Bastian Rønfeldt Thomsen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bastian Rønfeldt Thomsen</h1>
+            <p class="tagline">Junior ML/AI Engineer | ML & Data Science Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="projects-showcase.html">Project Showcase</a>
+            <a href="skills-library.html">Skills Library</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="skills-library">
+            <h2>Complete Skills Library</h2>
+            <p>A comprehensive overview of my technical skills, tools, frameworks, and knowledge areas. This library represents my continuous learning journey in machine learning, data science, and software engineering.</p>
+
+            <div class="library-search">
+                <input type="text" id="skill-search" placeholder="Search skills... (e.g., Python, Machine Learning, Docker)" />
+            </div>
+
+            <div class="library-categories">
+                <button class="library-category-btn active" data-category="all">All Skills</button>
+                <button class="library-category-btn" data-category="languages">Languages</button>
+                <button class="library-category-btn" data-category="ml-ai">ML & AI</button>
+                <button class="library-category-btn" data-category="data">Data Science</button>
+                <button class="library-category-btn" data-category="frameworks">Frameworks</button>
+                <button class="library-category-btn" data-category="tools">Tools</button>
+                <button class="library-category-btn" data-category="cloud">Cloud & DevOps</button>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="library-section" data-category="languages">
+                <h3>Programming Languages</h3>
+                <div class="skills-library-grid">
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🐍</div>
+                        <h4>Python</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 95%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Primary language for ML/AI, data science, and backend development. Extensive experience with advanced features and best practices.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">📜</div>
+                        <h4>JavaScript/TypeScript</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Full-stack web development, data visualization, and building interactive applications.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">🗄️</div>
+                        <h4>SQL</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 88%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Database design, complex queries, optimization, and data manipulation across PostgreSQL, MySQL, and SQLite.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">⚙️</div>
+                        <h4>R</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>Statistical analysis, data visualization, and exploratory data analysis.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">☕</div>
+                        <h4>Java</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>Object-oriented programming, algorithms, and data structures implementation.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="beginner">
+                        <div class="skill-icon">🦀</div>
+                        <h4>Rust</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 45%"></div>
+                        </div>
+                        <span class="proficiency-label">Learning</span>
+                        <p>Systems programming and performance-critical applications. Currently expanding knowledge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine Learning & AI -->
+            <div class="library-section" data-category="ml-ai">
+                <h3>Machine Learning & AI</h3>
+                <div class="skills-library-grid">
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🤖</div>
+                        <h4>Supervised Learning</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 92%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Classification, regression, model selection, hyperparameter tuning, and ensemble methods.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">🧠</div>
+                        <h4>Deep Learning</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 88%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Neural networks, CNNs, RNNs, LSTMs, attention mechanisms, and transformer architectures.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">💬</div>
+                        <h4>Natural Language Processing</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Text processing, sentiment analysis, NER, transformers, BERT, GPT, and language models.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">👁️</div>
+                        <h4>Computer Vision</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 83%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Image classification, object detection, segmentation, and image generation.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">🔄</div>
+                        <h4>Reinforcement Learning</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 68%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>Q-learning, policy gradients, and deep RL algorithms for decision-making systems.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">📊</div>
+                        <h4>Unsupervised Learning</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Clustering, dimensionality reduction, anomaly detection, and representation learning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frameworks & Libraries -->
+            <div class="library-section" data-category="frameworks">
+                <h3>ML/AI Frameworks & Libraries</h3>
+                <div class="skills-library-grid">
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🔷</div>
+                        <h4>TensorFlow / Keras</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 90%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Building and deploying deep learning models, custom layers, callbacks, and optimization.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🔥</div>
+                        <h4>PyTorch</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 88%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Dynamic neural networks, custom architectures, and research implementations.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">📚</div>
+                        <h4>Scikit-learn</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 93%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Classical ML algorithms, preprocessing, model evaluation, and pipeline creation.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">🤗</div>
+                        <h4>Hugging Face Transformers</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Pre-trained models, fine-tuning, and deployment of transformer-based NLP models.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">📷</div>
+                        <h4>OpenCV</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 82%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Image processing, video analysis, and computer vision applications.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">⚡</div>
+                        <h4>JAX</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>High-performance numerical computing and automatic differentiation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Science Tools -->
+            <div class="library-section" data-category="data">
+                <h3>Data Science & Analytics</h3>
+                <div class="skills-library-grid">
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🐼</div>
+                        <h4>Pandas</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 95%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Data manipulation, cleaning, transformation, and advanced analytics with DataFrames.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🔢</div>
+                        <h4>NumPy</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 92%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Numerical computing, array operations, linear algebra, and scientific computing.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">📊</div>
+                        <h4>Matplotlib / Seaborn</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 88%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Data visualization, statistical plots, and publication-quality figures.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">📈</div>
+                        <h4>Plotly</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Interactive visualizations, dashboards, and web-based data exploration.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">⚡</div>
+                        <h4>Apache Spark</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Big data processing, distributed computing, and large-scale analytics.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">📋</div>
+                        <h4>Jupyter / JupyterLab</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 90%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Interactive computing, data exploration, and reproducible research.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div class="library-section" data-category="tools">
+                <h3>Development Tools & Technologies</h3>
+                <div class="skills-library-grid">
+                    <div class="skill-library-card" data-proficiency="expert">
+                        <div class="skill-icon">🔧</div>
+                        <h4>Git / GitHub</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 92%"></div>
+                        </div>
+                        <span class="proficiency-label">Expert</span>
+                        <p>Version control, branching strategies, code review, and collaborative development.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">🐳</div>
+                        <h4>Docker</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Containerization, multi-stage builds, docker-compose, and deployment.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">☸️</div>
+                        <h4>Kubernetes</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>Container orchestration, scaling, and cloud-native deployments.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">🌐</div>
+                        <h4>REST APIs</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 88%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>API design, Flask, FastAPI, authentication, and documentation.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">🧪</div>
+                        <h4>Testing (Pytest, Unittest)</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 82%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Unit testing, integration testing, mocking, and test-driven development.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">🔄</div>
+                        <h4>CI/CD</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>GitHub Actions, automated testing, deployment pipelines, and DevOps practices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud & Infrastructure -->
+            <div class="library-section" data-category="cloud">
+                <h3>Cloud & Infrastructure</h3>
+                <div class="skills-library-grid">
+                    <div class="skill-library-card" data-proficiency="advanced">
+                        <div class="skill-icon">☁️</div>
+                        <h4>AWS</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 78%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>EC2, S3, Lambda, SageMaker, and cloud infrastructure management.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">🔵</div>
+                        <h4>Google Cloud Platform</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 72%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>Compute Engine, Cloud Storage, Vertex AI, and BigQuery.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">🗄️</div>
+                        <h4>PostgreSQL / MySQL</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                        <span class="proficiency-label">Advanced</span>
+                        <p>Database design, optimization, indexing, and query performance tuning.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">🔴</div>
+                        <h4>Redis</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>Caching, session management, and real-time data processing.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="intermediate">
+                        <div class="skill-icon">🍃</div>
+                        <h4>MongoDB</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 70%"></div>
+                        </div>
+                        <span class="proficiency-label">Intermediate</span>
+                        <p>NoSQL database design, aggregation pipelines, and document-based storage.</p>
+                    </div>
+
+                    <div class="skill-library-card" data-proficiency="beginner">
+                        <div class="skill-icon">🌐</div>
+                        <h4>Terraform</h4>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 55%"></div>
+                        </div>
+                        <span class="proficiency-label">Learning</span>
+                        <p>Infrastructure as code, cloud resource management, and automation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concepts & Methodologies -->
+            <div class="library-section" data-category="concepts">
+                <h3>Concepts & Methodologies</h3>
+                <div class="concepts-grid">
+                    <div class="concept-card">
+                        <h4>🎯 Model Optimization</h4>
+                        <p>Hyperparameter tuning, regularization, early stopping, learning rate scheduling</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>📐 Feature Engineering</h4>
+                        <p>Feature selection, dimensionality reduction, encoding, scaling, transformation</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🔬 Experiment Tracking</h4>
+                        <p>MLflow, Weights & Biases, model versioning, reproducibility</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>📊 Statistical Analysis</h4>
+                        <p>Hypothesis testing, A/B testing, confidence intervals, probability theory</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🏗️ Software Architecture</h4>
+                        <p>Design patterns, SOLID principles, clean code, modular design</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🔄 MLOps</h4>
+                        <p>Model deployment, monitoring, CI/CD for ML, automated retraining</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🎨 Data Visualization</h4>
+                        <p>Visual design principles, storytelling with data, dashboard creation</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🔐 Model Interpretability</h4>
+                        <p>SHAP, LIME, feature importance, explainable AI techniques</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>⚖️ Ethics in AI</h4>
+                        <p>Bias detection, fairness, privacy, responsible AI development</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>📝 Technical Writing</h4>
+                        <p>Documentation, research papers, technical blog posts, code comments</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🤝 Agile Development</h4>
+                        <p>Scrum, sprint planning, code review, collaborative development</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🔍 Data Mining</h4>
+                        <p>Pattern discovery, association rules, clustering, text mining</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Bastian Rønfeldt Thomsen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Search functionality
+        const searchInput = document.getElementById('skill-search');
+        const skillCards = document.querySelectorAll('.skill-library-card, .concept-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            skillCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        if (card.style.opacity === '0') {
+                            card.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        });
+
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.library-category-btn');
+        const sections = document.querySelectorAll('.library-section');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                sections.forEach(section => {
+                    if (category === 'all') {
+                        section.style.display = 'block';
+                    } else {
+                        const sectionCategory = section.getAttribute('data-category');
+                        if (sectionCategory === category) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.skill-library-card').forEach((card, index) => {
+                card.classList.add('scale-in');
+                card.style.transitionDelay = `${index * 0.05}s`;
+                scrollObserver.observe(card);
+            });
+
+            document.querySelectorAll('.concept-card').forEach((card, index) => {
+                card.classList.add('fade-in');
+                card.style.transitionDelay = `${index * 0.05}s`;
+                scrollObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
