@@ -51,8 +51,7 @@
 
 [data-theme="dark"] .project-card,
 [data-theme="dark"] .skill-category,
-[data-theme="dark"] .testimonial-card,
-[data-theme="dark"] .stat-card {
+[data-theme="dark"] .testimonial-card {
     background: #1f1f1f;
     border-color: #2a2a2a;
 }
@@ -420,99 +419,6 @@ p {
 #about p {
     font-size: 1.05rem;
     line-height: 1.8;
-}
-
-/* Stats Section */
-.stats-section {
-    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%);
-    padding: 60px 40px;
-    border-radius: 30px;
-    margin: 60px 0;
-    box-shadow: var(--shadow-xl);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.stats-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-.stats-section::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-.stats-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 28px 56px rgba(147, 51, 234, 0.4);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 40px;
-}
-
-.stat-card {
-    text-align: center;
-    color: #ffffff;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.stat-card:nth-child(1) {
-    border-top-color: var(--accent-orange);
-}
-
-.stat-card:nth-child(2) {
-    border-top-color: var(--accent-yellow);
-}
-
-.stat-card:nth-child(3) {
-    border-top-color: var(--accent-teal);
-}
-
-.stat-card:nth-child(4) {
-    border-top-color: var(--accent-pink);
-}
-
-.stat-card:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.stat-label {
-    font-size: 1rem;
-    font-weight: 400;
-    opacity: 0.95;
-    letter-spacing: 0.5px;
 }
 
 /* Timeline for Experience */
@@ -1302,14 +1208,6 @@ footer p {
         font-size: 1.1rem;
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
-    }
-
     .timeline {
         padding-left: 30px;
     }
@@ -1368,18 +1266,6 @@ footer p {
 
     nav .container {
         gap: 15px;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stat-number {
-        font-size: 2rem;
-    }
-
-    .stats-section {
-        padding: 40px 20px;
     }
 
     .project-filters {
