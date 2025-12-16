@@ -341,6 +341,16 @@
 
         // Add animation classes and observe elements
         document.addEventListener('DOMContentLoaded', () => {
+            // Handle anchor links from other pages
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetSection = document.querySelector(window.location.hash);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+
             // Animate sections with fade-in
             document.querySelectorAll('section').forEach((section, index) => {
                 section.classList.add('fade-in');
@@ -380,24 +390,6 @@
             });
         });
 
-        // Dark mode toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        const themeIcon = document.querySelector('.theme-icon');
-
-        // Check for saved theme preference
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
 
         // Project filtering
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -430,51 +422,20 @@
             });
         });
 
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        const formStatus = document.querySelector('.form-status');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-
-                const formData = new FormData(contactForm);
-                formStatus.textContent = 'Sending...';
-                formStatus.className = 'form-status';
-
-                try {
-                    // Note: Replace with actual Formspree URL or backend endpoint
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        formStatus.textContent = 'Message sent successfully!';
-                        formStatus.className = 'form-status success';
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    formStatus.textContent = 'Error sending message. Please try email directly.';
-                    formStatus.className = 'form-status error';
-                }
-            });
-        }
 
         // Smooth scroll for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const href = this.getAttribute('href');
+                // Only handle anchor links on the same page
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(href);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
+                // Let other links (like index.html, certifications.html) work normally
             });
         });
 
