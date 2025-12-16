@@ -1941,6 +1941,101 @@ footer p {
     margin: 0;
 }
 
+/* Compact Badge Layout for Skills */
+.skills-badge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-badge {
+    background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-height: 140px;
+}
+
+.skill-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-purple);
+}
+
+.skill-badge:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-badge-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill-badge:hover .skill-badge-icon {
+    transform: scale(1.15);
+}
+
+.skill-badge h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.skill-level {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.skill-level.expert {
+    color: #10b981;
+}
+
+.skill-level.advanced {
+    color: var(--accent-blue);
+}
+
+.skill-level.intermediate {
+    color: var(--accent-orange);
+}
+
+.skill-level.beginner {
+    color: var(--secondary-color);
+}
+
+/* Keep old styles for backward compatibility but hide them */
+.skills-library-grid {
+    display: none;
+}
+
 /* Responsive adjustments for new pages */
 @media (max-width: 768px) {
     .certifications-grid,
@@ -1948,6 +2043,24 @@ footer p {
     .skills-library-grid,
     .concepts-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-badge-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .skill-badge {
+        padding: 15px 10px;
+        min-height: 120px;
+    }
+
+    .skill-badge-icon {
+        font-size: 2rem;
+    }
+
+    .skill-badge h4 {
+        font-size: 0.85rem;
     }
 
     .stats-grid {
