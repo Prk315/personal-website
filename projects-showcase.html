@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase - Bastian Rønfeldt Thomsen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bastian Rønfeldt Thomsen</h1>
+            <p class="tagline">Junior ML/AI Engineer | ML & Data Science Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="projects-showcase.html">Project Showcase</a>
+            <a href="skills-library.html">Skills Library</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="project-showcase">
+            <h2>Project Showcase</h2>
+            <p>Explore my portfolio of machine learning, data science, and software engineering projects. Each project demonstrates my ability to solve complex problems using cutting-edge technologies and best practices.</p>
+
+            <div class="showcase-filters">
+                <button class="showcase-filter-btn active" data-filter="all">All Projects</button>
+                <button class="showcase-filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="showcase-filter-btn" data-filter="nlp">Natural Language</button>
+                <button class="showcase-filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="showcase-filter-btn" data-filter="data">Data Science</button>
+                <button class="showcase-filter-btn" data-filter="web">Web Applications</button>
+            </div>
+
+            <div class="showcase-grid">
+                <div class="showcase-card" data-category="ml cv">
+                    <div class="showcase-image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <span class="placeholder-text">🖼️</span>
+                        </div>
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-header">
+                            <h3>Advanced Image Classifier</h3>
+                            <div class="showcase-status">Production</div>
+                        </div>
+                        <p class="showcase-brief">
+                            Deep learning image classification system using state-of-the-art convolutional neural networks.
+                            Achieved 95%+ accuracy on diverse image datasets with custom preprocessing pipeline.
+                        </p>
+                        <div class="showcase-highlights">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Custom CNN architecture with residual connections</li>
+                                <li>Data augmentation pipeline for improved generalization</li>
+                                <li>Transfer learning with pre-trained models (ResNet, EfficientNet)</li>
+                                <li>Real-time inference API with Flask</li>
+                                <li>Docker containerization for easy deployment</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">Accuracy</span>
+                                <span class="metric-value">95.3%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Training Time</span>
+                                <span class="metric-value">12 hours</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Dataset Size</span>
+                                <span class="metric-value">50K images</span>
+                            </div>
+                        </div>
+                        <div class="showcase-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="#" class="showcase-link primary">View on GitHub</a>
+                            <a href="#" class="showcase-link secondary">Live Demo</a>
+                            <a href="#" class="showcase-link secondary">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card" data-category="nlp ml">
+                    <div class="showcase-image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span class="placeholder-text">💬</span>
+                        </div>
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-header">
+                            <h3>Multilingual Sentiment Analyzer</h3>
+                            <div class="showcase-status">Active</div>
+                        </div>
+                        <p class="showcase-brief">
+                            NLP system for sentiment analysis supporting multiple languages with transformer-based architecture.
+                            Provides nuanced emotion detection and opinion mining capabilities.
+                        </p>
+                        <div class="showcase-highlights">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Multi-language support (English, Danish, German, Spanish)</li>
+                                <li>Fine-tuned BERT models for sentiment classification</li>
+                                <li>Aspect-based sentiment analysis</li>
+                                <li>Real-time processing with batch inference optimization</li>
+                                <li>REST API with comprehensive documentation</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">F1 Score</span>
+                                <span class="metric-value">92.8%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Languages</span>
+                                <span class="metric-value">4</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Throughput</span>
+                                <span class="metric-value">500 req/s</span>
+                            </div>
+                        </div>
+                        <div class="showcase-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="#" class="showcase-link primary">View on GitHub</a>
+                            <a href="#" class="showcase-link secondary">API Docs</a>
+                            <a href="#" class="showcase-link secondary">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card" data-category="data web">
+                    <div class="showcase-image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <span class="placeholder-text">📊</span>
+                        </div>
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-header">
+                            <h3>Interactive Analytics Platform</h3>
+                            <div class="showcase-status">Production</div>
+                        </div>
+                        <p class="showcase-brief">
+                            Full-stack data analytics platform with interactive visualizations and real-time data processing.
+                            Handles millions of data points with smooth performance and beautiful UI.
+                        </p>
+                        <div class="showcase-highlights">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Real-time data streaming and processing</li>
+                                <li>Interactive dashboards with D3.js and Plotly</li>
+                                <li>Custom data aggregation and filtering engine</li>
+                                <li>User authentication and role-based access control</li>
+                                <li>Export functionality (PDF, Excel, CSV)</li>
+                                <li>Responsive design for mobile and desktop</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">Data Points</span>
+                                <span class="metric-value">5M+</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Load Time</span>
+                                <span class="metric-value">&lt;2s</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Users</span>
+                                <span class="metric-value">500+</span>
+                            </div>
+                        </div>
+                        <div class="showcase-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="#" class="showcase-link primary">View on GitHub</a>
+                            <a href="#" class="showcase-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card" data-category="ml data">
+                    <div class="showcase-image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <span class="placeholder-text">🎯</span>
+                        </div>
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-header">
+                            <h3>Predictive Forecasting System</h3>
+                            <div class="showcase-status">Research</div>
+                        </div>
+                        <p class="showcase-brief">
+                            Time series forecasting system using ensemble ML models for business intelligence.
+                            Provides accurate predictions with confidence intervals and anomaly detection.
+                        </p>
+                        <div class="showcase-highlights">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Ensemble of ARIMA, LSTM, and Prophet models</li>
+                                <li>Automated feature engineering pipeline</li>
+                                <li>Anomaly detection and trend analysis</li>
+                                <li>Model explainability with SHAP values</li>
+                                <li>Automated retraining pipeline</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">RMSE</span>
+                                <span class="metric-value">0.12</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Forecast Horizon</span>
+                                <span class="metric-value">30 days</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Models</span>
+                                <span class="metric-value">5</span>
+                            </div>
+                        </div>
+                        <div class="showcase-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Prophet</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">SHAP</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="#" class="showcase-link primary">View on GitHub</a>
+                            <a href="#" class="showcase-link secondary">Research Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card" data-category="cv ml">
+                    <div class="showcase-image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <span class="placeholder-text">👁️</span>
+                        </div>
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-header">
+                            <h3>Real-Time Object Detection</h3>
+                            <div class="showcase-status">Active</div>
+                        </div>
+                        <p class="showcase-brief">
+                            Real-time object detection system using YOLO architecture with custom training pipeline.
+                            Optimized for edge deployment with TensorRT acceleration.
+                        </p>
+                        <div class="showcase-highlights">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>YOLOv8 implementation with custom architecture</li>
+                                <li>30+ FPS on CPU, 120+ FPS on GPU</li>
+                                <li>Custom dataset annotation and training pipeline</li>
+                                <li>TensorRT optimization for edge devices</li>
+                                <li>Multi-camera support with distributed processing</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">mAP</span>
+                                <span class="metric-value">88.5%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">FPS (GPU)</span>
+                                <span class="metric-value">120+</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Classes</span>
+                                <span class="metric-value">20</span>
+                            </div>
+                        </div>
+                        <div class="showcase-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">YOLO</span>
+                            <span class="tech-tag">TensorRT</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">CUDA</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="#" class="showcase-link primary">View on GitHub</a>
+                            <a href="#" class="showcase-link secondary">Demo Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="showcase-card" data-category="web data">
+                    <div class="showcase-image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <span class="placeholder-text">🚀</span>
+                        </div>
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-header">
+                            <h3>ML Model Deployment Platform</h3>
+                            <div class="showcase-status">Beta</div>
+                        </div>
+                        <p class="showcase-brief">
+                            Platform for deploying and managing machine learning models with monitoring, versioning,
+                            and A/B testing capabilities. Simplifies the ML operations workflow.
+                        </p>
+                        <div class="showcase-highlights">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>One-click model deployment with auto-scaling</li>
+                                <li>Model versioning and rollback capabilities</li>
+                                <li>A/B testing framework for model comparison</li>
+                                <li>Comprehensive monitoring and alerting</li>
+                                <li>Integration with popular ML frameworks</li>
+                            </ul>
+                        </div>
+                        <div class="showcase-metrics">
+                            <div class="metric-item">
+                                <span class="metric-label">Deployed Models</span>
+                                <span class="metric-value">25+</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Uptime</span>
+                                <span class="metric-value">99.9%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Requests/day</span>
+                                <span class="metric-value">1M+</span>
+                            </div>
+                        </div>
+                        <div class="showcase-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Prometheus</span>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="#" class="showcase-link primary">View on GitHub</a>
+                            <a href="#" class="showcase-link secondary">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Bastian Rønfeldt Thomsen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.showcase-filter-btn');
+        const showcaseCards = document.querySelectorAll('.showcase-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                showcaseCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories.includes(filter)) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.showcase-card').forEach((card, index) => {
+                card.classList.add('fade-in');
+                card.style.transitionDelay = `${index * 0.1}s`;
+                scrollObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
