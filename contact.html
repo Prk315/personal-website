@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bastian Rønfeldt Thomsen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bastian Rønfeldt Thomsen</h1>
+            <p class="tagline">Junior ML/AI Engineer | ML & Data Science Student</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="projects-showcase.html">Project Showcase</a>
+            <a href="skills-library.html">Skills Library</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="contact-page">
+            <h2>Get In Touch</h2>
+            <p>Interested in collaborating on ML/AI projects, discussing data science opportunities, or just want to connect? Feel free to reach out!</p>
+
+            <div class="contact-grid">
+                <div class="contact-methods">
+                    <h3>Contact Information</h3>
+                    <div class="contact-method-card">
+                        <div class="method-icon">📧</div>
+                        <div class="method-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@bastian-thomsen.com">contact@bastian-thomsen.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-method-card">
+                        <div class="method-icon">💼</div>
+                        <div class="method-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://linkedin.com/in/bastian-thomsen" target="_blank">linkedin.com/in/bastian-thomsen</a></p>
+                            <span class="method-note">Best for professional inquiries</span>
+                        </div>
+                    </div>
+                    <div class="contact-method-card">
+                        <div class="method-icon">🐙</div>
+                        <div class="method-details">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/Prk315" target="_blank">github.com/Prk315</a></p>
+                            <span class="method-note">Check out my code and projects</span>
+                        </div>
+                    </div>
+                    <div class="contact-method-card">
+                        <div class="method-icon">📍</div>
+                        <div class="method-details">
+                            <h4>Location</h4>
+                            <p>Copenhagen, Denmark</p>
+                            <span class="method-note">Available for remote and local opportunities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                        <p class="form-note">Or email me directly at <a href="mailto:contact@bastian-thomsen.com">contact@bastian-thomsen.com</a></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="availability-section">
+                <h3>Current Availability</h3>
+                <div class="availability-grid">
+                    <div class="availability-card">
+                        <h4>🎓 Student Status</h4>
+                        <p>Halfway through Bachelor's degree in ML & Data Science at Copenhagen University</p>
+                    </div>
+                    <div class="availability-card">
+                        <h4>💼 Open to Opportunities</h4>
+                        <p>Interested in internships, part-time positions, and collaborative projects in ML/AI</p>
+                    </div>
+                    <div class="availability-card">
+                        <h4>🤝 Collaboration</h4>
+                        <p>Always excited to work on interesting ML projects and contribute to open source</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Bastian Rønfeldt Thomsen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.contact-method-card, .availability-card').forEach((card, index) => {
+                card.classList.add('fade-in');
+                card.style.transitionDelay = `${index * 0.1}s`;
+                scrollObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
