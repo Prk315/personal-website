@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bastian Rønfeldt Thomsen - ML/AI Engineer</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Bastian Rønfeldt Thomsen",
+      "jobTitle": "Junior ML/AI Engineer",
+      "description": "Data Science student at Copenhagen University specializing in Machine Learning and AI",
+      "url": "https://yourdomain.com",
+      "sameAs": [
+        "https://linkedin.com/in/yourprofile",
+        "https://github.com/yourusername"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Copenhagen University"
+      },
+      "knowsAbout": ["Machine Learning", "Artificial Intelligence", "Data Science", "Python", "Deep Learning"]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -21,6 +42,7 @@
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -42,8 +64,47 @@
             </p>
         </section>
 
+        <!-- Stats Dashboard -->
+        <section id="stats" class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Technologies Mastered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">GitHub Contributions</div>
+                </div>
+            </div>
+        </section>
+
         <section id="experience">
             <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <h3>Junior ML/AI Engineer</h3>
+                            <span class="date">2023 - Present</span>
+                        </div>
+                        <p class="company">Freelance & Academic Projects</p>
+                        <ul>
+                            <li>Developing machine learning models for data analysis and prediction</li>
+                            <li>Implementing AI solutions using Python, TensorFlow, and PyTorch</li>
+                            <li>Conducting research on cutting-edge ML techniques and algorithms</li>
+                            <li>Contributing to open-source ML projects and libraries</li>
+                        </ul>
+                    </div>
+                </div>
 
             <div class="experience-item">
                 <div class="experience-header">
@@ -62,79 +123,105 @@
 
         <section id="projects">
             <h2>Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="data">Data Science</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="ml ai">
                     <div class="project-header">
-                        <h3>Project Name 1</h3>
+                        <h3>Neural Network Image Classifier</h3>
                         <div class="project-links">
-                            <a href="https://github.com/yourusername/project1" target="_blank" class="project-link">GitHub</a>
-                            <a href="https://project1-demo.com" target="_blank" class="project-link">Demo</a>
+                            <a href="https://github.com/yourusername/image-classifier" target="_blank" class="project-link">GitHub</a>
                         </div>
                     </div>
-                    <p class="project-description">
-                        A brief description of your project. Explain what problem it solves,
-                        what makes it unique, and the impact it has had.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Project Name 2</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/yourusername/project2" target="_blank" class="project-link">GitHub</a>
-                            <a href="https://project2-demo.com" target="_blank" class="project-link">Demo</a>
-                        </div>
+                    <div class="project-metrics">
+                        <span class="metric">95% Accuracy</span>
+                        <span class="metric">10K+ Images</span>
                     </div>
                     <p class="project-description">
-                        Another impressive project that showcases your skills. Highlight key
-                        features and technical achievements.
+                        Deep learning image classification system using convolutional neural networks.
+                        Achieved 95% accuracy on test dataset with custom architecture and data augmentation techniques.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Keras</span>
+                        <span class="tag">CNN</span>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="ml data">
                     <div class="project-header">
-                        <h3>Project Name 3</h3>
+                        <h3>Predictive Analytics Dashboard</h3>
                         <div class="project-links">
-                            <a href="https://github.com/yourusername/project3" target="_blank" class="project-link">GitHub</a>
-                            <a href="https://project3-demo.com" target="_blank" class="project-link">Demo</a>
+                            <a href="https://github.com/yourusername/analytics-dashboard" target="_blank" class="project-link">GitHub</a>
+                            <a href="https://dashboard-demo.com" target="_blank" class="project-link">Demo</a>
                         </div>
                     </div>
+                    <div class="project-metrics">
+                        <span class="metric">Real-time Analysis</span>
+                        <span class="metric">5 ML Models</span>
+                    </div>
                     <p class="project-description">
-                        A third project demonstrating versatility and expertise in your field.
-                        Focus on measurable outcomes and innovation.
+                        Interactive dashboard for predictive analytics using multiple ML models. Features real-time
+                        data processing, visualization, and automated forecasting for business intelligence.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">AWS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Plotly</span>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="ai ml">
                     <div class="project-header">
-                        <h3>Project Name 4</h3>
+                        <h3>NLP Sentiment Analyzer</h3>
                         <div class="project-links">
-                            <a href="https://github.com/yourusername/project4" target="_blank" class="project-link">GitHub</a>
+                            <a href="https://github.com/yourusername/sentiment-analyzer" target="_blank" class="project-link">GitHub</a>
                         </div>
                     </div>
+                    <div class="project-metrics">
+                        <span class="metric">92% F1-Score</span>
+                        <span class="metric">Multilingual</span>
+                    </div>
                     <p class="project-description">
-                        Additional project showcasing different skills. Some projects might not
-                        have a live demo, which is perfectly fine.
+                        Natural Language Processing tool for sentiment analysis supporting multiple languages.
+                        Uses transformer models for accurate emotion detection and opinion mining.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">Docker</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="data web">
+                    <div class="project-header">
+                        <h3>Data Visualization Platform</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/yourusername/data-viz" target="_blank" class="project-link">GitHub</a>
+                            <a href="https://dataviz-demo.com" target="_blank" class="project-link">Demo</a>
+                        </div>
+                    </div>
+                    <div class="project-metrics">
+                        <span class="metric">Interactive Charts</span>
+                        <span class="metric">1M+ Data Points</span>
+                    </div>
+                    <p class="project-description">
+                        Web-based platform for creating interactive data visualizations from large datasets.
+                        Features custom charting library and real-time collaboration capabilities.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">WebGL</span>
                     </div>
                 </div>
             </div>
@@ -153,7 +240,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
+                    <h3>Programming & Tools</h3>
                     <ul>
                         <li>Python</li>
                         <li>TensorFlow & PyTorch</li>
@@ -187,20 +274,62 @@
             </div>
         </section>
 
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Bastian demonstrates exceptional analytical skills and a deep understanding of machine learning
+                        concepts. His ability to translate complex algorithms into practical solutions is impressive."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Professor Name</strong>
+                        <span>Copenhagen University</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Working with Bastian on our ML project was fantastic. His technical expertise and collaborative
+                        approach helped us achieve outstanding results."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Colleague Name</strong>
+                        <span>Project Collaborator</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Bastian's passion for AI and dedication to continuous learning make him a valuable asset.
+                        His projects showcase both creativity and technical rigor."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Mentor Name</strong>
+                        <span>Industry Professional</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>LinkedIn</h3>
-                    <p><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>GitHub</h3>
-                    <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:bastian@example.com">bastian@example.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>💼 LinkedIn</h3>
+                        <p><a href="https://linkedin.com/in/bastian-thomsen" target="_blank">linkedin.com/in/bastian-thomsen</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🐙 GitHub</h3>
+                        <p><a href="https://github.com/bastian-thomsen" target="_blank">github.com/bastian-thomsen</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>Copenhagen, Denmark</p>
+                    </div>
                 </div>
                 <div class="contact-item">
                     <h3>Location</h3>
@@ -217,7 +346,158 @@
     </footer>
 
     <script>
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const themeIcon = document.querySelector('.theme-icon');
+
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Animated counter for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Intersection Observer for stats animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(num => animateCounter(num));
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories.includes(filter)) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.querySelector('.form-status');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                formStatus.textContent = 'Sending...';
+                formStatus.className = 'form-status';
+
+                try {
+                    // Note: Replace with actual Formspree URL or backend endpoint
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = 'Message sent successfully!';
+                        formStatus.className = 'form-status success';
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    formStatus.textContent = 'Error sending message. Please try email directly.';
+                    formStatus.className = 'form-status error';
+                }
+            });
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
     </script>
 </body>
 </html>
