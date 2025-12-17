@@ -51,7 +51,7 @@
                         <span class="cert-skill">Concurrency</span>
                         <span class="cert-skill">Flask Deployment</span>
                     </div>
-                    <span class="cert-note">Certificate available upon request</span>
+                    <button class="view-cert-btn" data-cert="advanced-python">View Certificate</button>
                 </div>
 
                 <div class="certification-card">
@@ -76,7 +76,7 @@
                         <span class="cert-skill">Functions & Lambda</span>
                         <span class="cert-skill">Modules</span>
                     </div>
-                    <span class="cert-note">Certificate available upon request</span>
+                    <button class="view-cert-btn" data-cert="learn-python3">View Certificate</button>
                 </div>
 
                 <div class="certification-card">
@@ -101,55 +101,7 @@
                         <span class="cert-skill">Regularization</span>
                         <span class="cert-skill">Git & Testing</span>
                     </div>
-                    <span class="cert-note">Certificate available upon request</span>
-                </div>
-
-                <div class="certification-card">
-                    <div class="cert-header">
-                        <div class="cert-platform">Codecademy</div>
-                    </div>
-                    <h3>Natural Language Processing</h3>
-                    <div class="cert-details">
-                        <span class="cert-date">Completed: 2024</span>
-                        <span class="cert-hours">45 hours</span>
-                    </div>
-                    <p class="cert-description">
-                        Specialized NLP course covering text preprocessing, tokenization, sentiment analysis,
-                        named entity recognition, text generation, and transformer models. Worked with NLTK,
-                        spaCy, and modern transformer architectures like BERT and GPT.
-                    </p>
-                    <div class="cert-skills">
-                        <span class="cert-skill">NLP</span>
-                        <span class="cert-skill">NLTK</span>
-                        <span class="cert-skill">spaCy</span>
-                        <span class="cert-skill">Transformers</span>
-                        <span class="cert-skill">BERT</span>
-                    </div>
-                    <span class="cert-note">Certificate available upon request</span>
-                </div>
-
-                <div class="certification-card">
-                    <div class="cert-header">
-                        <div class="cert-platform">Codecademy</div>
-                    </div>
-                    <h3>Data Visualization</h3>
-                    <div class="cert-details">
-                        <span class="cert-date">Completed: 2023</span>
-                        <span class="cert-hours">25 hours</span>
-                    </div>
-                    <p class="cert-description">
-                        Comprehensive data visualization course teaching principles of effective visual communication,
-                        creating interactive dashboards, and advanced plotting techniques using Python libraries
-                        including Matplotlib, Seaborn, and Plotly.
-                    </p>
-                    <div class="cert-skills">
-                        <span class="cert-skill">Data Viz</span>
-                        <span class="cert-skill">Matplotlib</span>
-                        <span class="cert-skill">Seaborn</span>
-                        <span class="cert-skill">Plotly</span>
-                        <span class="cert-skill">Dashboards</span>
-                    </div>
-                    <span class="cert-note">Certificate available upon request</span>
+                    <button class="view-cert-btn" data-cert="ml-ai-engineer">View Certificate</button>
                 </div>
 
                 <div class="certification-card">
@@ -174,7 +126,7 @@
                         <span class="cert-skill">Heroku Deployment</span>
                         <span class="cert-skill">Web Development</span>
                     </div>
-                    <span class="cert-note">Certificate available upon request</span>
+                    <button class="view-cert-btn" data-cert="flask-web-apps">View Certificate</button>
                 </div>
             </div>
 
@@ -182,15 +134,15 @@
                 <h3>Learning Statistics</h3>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number">6</div>
+                        <div class="stat-number">4</div>
                         <div class="stat-label">Certifications Completed</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">455+</div>
+                        <div class="stat-number">109+</div>
                         <div class="stat-label">Hours of Learning</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">15+</div>
+                        <div class="stat-number">70</div>
                         <div class="stat-label">Portfolio Projects</div>
                     </div>
                     <div class="stat-card">
@@ -236,6 +188,29 @@
                 card.classList.add('fade-in');
                 card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
+            });
+
+            // Certificate URLs mapping
+            const certificateUrls = {
+                'advanced-python': '#', // Add certificate URL here
+                'learn-python3': '#', // Add certificate URL here
+                'ml-ai-engineer': '#', // Add certificate URL here
+                'flask-web-apps': '#' // Add certificate URL here
+            };
+
+            // Add click handlers for certificate view buttons
+            document.querySelectorAll('.view-cert-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const certId = e.target.getAttribute('data-cert');
+                    const certUrl = certificateUrls[certId];
+
+                    if (certUrl && certUrl !== '#') {
+                        // Open certificate in new tab
+                        window.open(certUrl, '_blank');
+                    } else {
+                        alert('Certificate will be available soon. Please check back later or contact me directly.');
+                    }
+                });
             });
         });
     </script>

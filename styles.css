@@ -1424,6 +1424,32 @@ footer p {
     transform: translateX(5px);
 }
 
+.view-cert-btn {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.view-cert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+}
+
+.view-cert-btn:active {
+    transform: translateY(0);
+}
+
 .learning-stats {
     margin-top: 60px;
     padding: 40px;
