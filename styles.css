@@ -421,6 +421,123 @@ p {
     line-height: 1.8;
 }
 
+.about-subsection {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-subsection::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    opacity: 0.03;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.about-subsection:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.about-subsection:hover::before {
+    opacity: 0.06;
+    transform: scale(1.2);
+}
+
+.about-subsection:nth-child(odd) {
+    border-left-color: var(--accent-purple);
+}
+
+.about-subsection:nth-child(even) {
+    border-left-color: var(--accent-teal);
+}
+
+.about-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.about-subsection p {
+    margin-bottom: 0;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+/* Experience Slider Container */
+.experience-slider-container {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+/* Custom Scrollbar */
+.experience-slider-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.experience-slider-container::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.experience-slider-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.experience-slider-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+}
+
+/* Firefox Scrollbar */
+.experience-slider-container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-blue) var(--light-gray);
+}
+
+/* Scroll Indicator */
+.experience-slider-container::after {
+    content: '↓ Scroll for more ↓';
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95), transparent);
+    color: var(--accent-purple);
+    font-size: 0.85rem;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-slider-container:hover::after {
+    opacity: 1;
+}
+
 /* Timeline for Experience */
 .timeline {
     position: relative;
