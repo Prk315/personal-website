@@ -42,7 +42,6 @@
                 <div class="showcase-card" data-category="ml cv">
                     <div class="showcase-image">
                         <div class="placeholder-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <span class="placeholder-text">🖼️</span>
                         </div>
                     </div>
                     <div class="showcase-content">
@@ -95,7 +94,6 @@
                 <div class="showcase-card" data-category="nlp ml">
                     <div class="showcase-image">
                         <div class="placeholder-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <span class="placeholder-text">💬</span>
                         </div>
                     </div>
                     <div class="showcase-content">
@@ -148,7 +146,6 @@
                 <div class="showcase-card" data-category="data web">
                     <div class="showcase-image">
                         <div class="placeholder-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                            <span class="placeholder-text">📊</span>
                         </div>
                     </div>
                     <div class="showcase-content">
@@ -202,7 +199,6 @@
                 <div class="showcase-card" data-category="ml data">
                     <div class="showcase-image">
                         <div class="placeholder-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                            <span class="placeholder-text">🎯</span>
                         </div>
                     </div>
                     <div class="showcase-content">
@@ -255,7 +251,6 @@
                 <div class="showcase-card" data-category="cv ml">
                     <div class="showcase-image">
                         <div class="placeholder-img" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                            <span class="placeholder-text">👁️</span>
                         </div>
                     </div>
                     <div class="showcase-content">
@@ -308,7 +303,6 @@
                 <div class="showcase-card" data-category="web data">
                     <div class="showcase-image">
                         <div class="placeholder-img" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                            <span class="placeholder-text">🚀</span>
                         </div>
                     </div>
                     <div class="showcase-content">
@@ -401,8 +395,8 @@
 
         // Scroll Animation
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 50px 0px'
         };
 
         const scrollObserver = new IntersectionObserver((entries) => {
@@ -416,7 +410,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.showcase-card').forEach((card, index) => {
                 card.classList.add('fade-in');
-                card.style.transitionDelay = `${index * 0.1}s`;
+                card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
             });
         });

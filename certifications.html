@@ -32,9 +32,6 @@
             <div class="certifications-grid">
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-badge">
-                            <span class="cert-icon">📜</span>
-                        </div>
                         <div class="cert-platform">Codecademy</div>
                     </div>
                     <h3>Learn Python 3</h3>
@@ -58,9 +55,6 @@
 
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-badge">
-                            <span class="cert-icon">📊</span>
-                        </div>
                         <div class="cert-platform">Codecademy</div>
                     </div>
                     <h3>Data Science Career Path</h3>
@@ -86,9 +80,6 @@
 
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-badge">
-                            <span class="cert-icon">🧠</span>
-                        </div>
                         <div class="cert-platform">Codecademy</div>
                     </div>
                     <h3>Machine Learning Specialist</h3>
@@ -113,9 +104,6 @@
 
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-badge">
-                            <span class="cert-icon">🔍</span>
-                        </div>
                         <div class="cert-platform">Codecademy</div>
                     </div>
                     <h3>Natural Language Processing</h3>
@@ -140,9 +128,6 @@
 
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-badge">
-                            <span class="cert-icon">📈</span>
-                        </div>
                         <div class="cert-platform">Codecademy</div>
                     </div>
                     <h3>Data Visualization</h3>
@@ -167,9 +152,6 @@
 
                 <div class="certification-card">
                     <div class="cert-header">
-                        <div class="cert-badge">
-                            <span class="cert-icon">⚙️</span>
-                        </div>
                         <div class="cert-platform">Codecademy</div>
                     </div>
                     <h3>Computer Science Career Path</h3>
@@ -227,8 +209,8 @@
 
         // Scroll Animation Observer
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 50px 0px'
         };
 
         const scrollObserver = new IntersectionObserver((entries) => {
@@ -242,13 +224,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.certification-card').forEach((card, index) => {
                 card.classList.add('scale-in');
-                card.style.transitionDelay = `${index * 0.1}s`;
+                card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
             });
 
             document.querySelectorAll('.stat-card').forEach((card, index) => {
                 card.classList.add('fade-in');
-                card.style.transitionDelay = `${index * 0.1}s`;
+                card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
             });
         });
