@@ -154,6 +154,21 @@
         </section>
     </main>
 
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="cert-modal-close">&times;</span>
+            <div class="cert-modal-body">
+                <img id="certificateImage" src="" alt="Certificate">
+                <div id="certificatePlaceholder" class="cert-placeholder">
+                    <h3>Certificate</h3>
+                    <p>Certificate image will be displayed here.</p>
+                    <p class="cert-info-text">Please add the certificate image URL to view the full certificate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; <span id="year"></span> Bastian Rønfeldt Thomsen. All rights reserved.</p>
@@ -190,13 +205,19 @@
                 scrollObserver.observe(card);
             });
 
-            // Certificate URLs mapping
+            // Certificate URLs mapping - Add your certificate image URLs here
             const certificateUrls = {
-                'advanced-python': '#', // Add certificate URL here
-                'learn-python3': '#', // Add certificate URL here
-                'ml-ai-engineer': '#', // Add certificate URL here
-                'flask-web-apps': '#' // Add certificate URL here
+                'advanced-python': '', // Add certificate image URL here
+                'learn-python3': '', // Add certificate image URL here
+                'ml-ai-engineer': '', // Add certificate image URL here
+                'flask-web-apps': '' // Add certificate image URL here
             };
+
+            // Certificate modal elements
+            const modal = document.getElementById('certificateModal');
+            const modalImg = document.getElementById('certificateImage');
+            const modalPlaceholder = document.getElementById('certificatePlaceholder');
+            const closeBtn = document.querySelector('.cert-modal-close');
 
             // Add click handlers for certificate view buttons
             document.querySelectorAll('.view-cert-btn').forEach(button => {
@@ -204,13 +225,32 @@
                     const certId = e.target.getAttribute('data-cert');
                     const certUrl = certificateUrls[certId];
 
-                    if (certUrl && certUrl !== '#') {
-                        // Open certificate in new tab
-                        window.open(certUrl, '_blank');
+                    // Show modal
+                    modal.style.display = 'block';
+
+                    if (certUrl && certUrl !== '') {
+                        // Show certificate image
+                        modalImg.src = certUrl;
+                        modalImg.style.display = 'block';
+                        modalPlaceholder.style.display = 'none';
                     } else {
-                        alert('Certificate will be available soon. Please check back later or contact me directly.');
+                        // Show placeholder
+                        modalImg.style.display = 'none';
+                        modalPlaceholder.style.display = 'flex';
                     }
                 });
+            });
+
+            // Close modal when clicking X
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
             });
         });
     </script>
