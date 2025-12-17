@@ -2507,6 +2507,118 @@ footer p {
    SKILLS LIBRARY PAGE STYLES
    ==================================== */
 
+/* Hero Background for Skills Library */
+.skills-library-hero {
+    position: relative;
+    min-height: auto;
+    padding: 60px 0 80px 0;
+}
+
+.skills-library-content {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.skills-library-hero h2 {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.skills-library-hero h2::after {
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+}
+
+.skills-library-hero > p,
+.skills-library-hero .evidence-note {
+    color: #b0b0b0;
+}
+
+.skills-library-hero .evidence-note strong {
+    color: #ffffff;
+}
+
+.skills-library-hero .library-section h3 {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced skill badges and cards on dark background */
+.skills-library-hero .skill-badge {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-library-hero .skill-badge:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
+}
+
+.skills-library-hero .skill-badge h4 {
+    color: #ffffff;
+}
+
+.skills-library-hero .concept-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-library-hero .concept-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
+}
+
+.skills-library-hero .concept-card h4 {
+    color: #ffffff;
+}
+
+.skills-library-hero .concept-card p {
+    color: #d0d0d0;
+}
+
+/* Search bar on dark background */
+.skills-library-hero .library-search input {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.skills-library-hero .library-search input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.skills-library-hero .library-search input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Category buttons on dark background */
+.skills-library-hero .library-category-btn {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.skills-library-hero .library-category-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-purple);
+}
+
+.skills-library-hero .library-category-btn.active {
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    border-color: transparent;
+}
+
 .library-search {
     margin-bottom: 30px;
 }
