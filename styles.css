@@ -153,7 +153,7 @@ body::after {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -164,7 +164,7 @@ body::after {
 header {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: #ffffff;
-    padding: 60px 0;
+    padding: 40px 0;
     border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -1247,7 +1247,7 @@ footer p {
 
 @media (max-width: 480px) {
     header {
-        padding: 40px 0;
+        padding: 30px 0;
     }
 
     header h1 {
