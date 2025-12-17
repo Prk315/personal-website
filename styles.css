@@ -2507,11 +2507,39 @@ footer p {
    SKILLS LIBRARY PAGE STYLES
    ==================================== */
 
-/* Hero Background for Skills Library */
+/* Hero Background for Skills Library - White Version with Animations */
 .skills-library-hero {
     position: relative;
     min-height: auto;
     padding: 60px 0 80px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f8f9fa 100%);
+}
+
+/* Override the dark background from hero-section */
+.skills-library-hero::before {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(147, 51, 234, 0.08));
+}
+
+.skills-library-hero::after {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.06), rgba(249, 115, 22, 0.06));
+}
+
+/* Keep the diagonal lines visible on white */
+.skills-library-hero .hero-content::before {
+    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.15) 30%, rgba(147, 51, 234, 0.15) 50%, rgba(236, 72, 153, 0.15) 70%, transparent 100%);
+    opacity: 0.5;
+}
+
+.skills-library-hero .hero-content::after {
+    background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.15) 30%, rgba(249, 115, 22, 0.15) 50%, rgba(251, 191, 36, 0.15) 70%, transparent 100%);
+    opacity: 0.4;
+}
+
+/* Accent dots - more visible on white */
+.skills-library-hero .accent-dot-1,
+.skills-library-hero .accent-dot-2,
+.skills-library-hero .accent-dot-3 {
+    opacity: 0.8;
 }
 
 .skills-library-content {
@@ -2524,8 +2552,8 @@ footer p {
 }
 
 .skills-library-hero h2 {
-    color: #ffffff;
-    border-bottom-color: rgba(255, 255, 255, 0.2);
+    color: var(--primary-color);
+    border-bottom-color: var(--border-color);
 }
 
 .skills-library-hero h2::after {
@@ -2534,89 +2562,91 @@ footer p {
 
 .skills-library-hero > p,
 .skills-library-hero .evidence-note {
-    color: #b0b0b0;
+    color: var(--text-color);
 }
 
 .skills-library-hero .evidence-note strong {
-    color: #ffffff;
+    color: var(--primary-color);
 }
 
 .skills-library-hero .library-section h3 {
-    color: #ffffff;
-    border-bottom-color: rgba(255, 255, 255, 0.2);
+    color: var(--primary-color);
+    border-bottom-color: var(--border-color);
 }
 
-/* Enhanced skill badges and cards on dark background */
+/* Enhanced skill badges and cards on white background */
 .skills-library-hero .skill-badge {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
 }
 
 .skills-library-hero .skill-badge:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: #ffffff;
     border-color: rgba(147, 51, 234, 0.4);
     box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
 }
 
 .skills-library-hero .skill-badge h4 {
-    color: #ffffff;
+    color: var(--primary-color);
 }
 
 .skills-library-hero .concept-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
 }
 
 .skills-library-hero .concept-card:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: #ffffff;
     border-color: rgba(147, 51, 234, 0.4);
     box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
 }
 
 .skills-library-hero .concept-card h4 {
-    color: #ffffff;
+    color: var(--primary-color);
 }
 
 .skills-library-hero .concept-card p {
-    color: #d0d0d0;
+    color: var(--text-color);
 }
 
-/* Search bar on dark background */
+/* Search bar on white background */
 .skills-library-hero .library-search input {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
 }
 
 .skills-library-hero .library-search input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--secondary-color);
 }
 
 .skills-library-hero .library-search input:focus {
-    background: rgba(255, 255, 255, 0.08);
+    background: #ffffff;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
-/* Category buttons on dark background */
+/* Category buttons on white background */
 .skills-library-hero .library-category-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
 }
 
 .skills-library-hero .library-category-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff;
     border-color: var(--accent-purple);
+    color: var(--accent-purple);
 }
 
 .skills-library-hero .library-category-btn.active {
     background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
     border-color: transparent;
+    color: #ffffff;
 }
 
 .library-search {
