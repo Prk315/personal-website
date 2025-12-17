@@ -33,14 +33,12 @@
                 <div class="contact-methods">
                     <h3>Contact Information</h3>
                     <div class="contact-method-card">
-                        <div class="method-icon">📧</div>
                         <div class="method-details">
                             <h4>Email</h4>
                             <p><a href="mailto:contact@bastian-thomsen.com">contact@bastian-thomsen.com</a></p>
                         </div>
                     </div>
                     <div class="contact-method-card">
-                        <div class="method-icon">💼</div>
                         <div class="method-details">
                             <h4>LinkedIn</h4>
                             <p><a href="https://linkedin.com/in/bastian-thomsen" target="_blank">linkedin.com/in/bastian-thomsen</a></p>
@@ -48,7 +46,6 @@
                         </div>
                     </div>
                     <div class="contact-method-card">
-                        <div class="method-icon">🐙</div>
                         <div class="method-details">
                             <h4>GitHub</h4>
                             <p><a href="https://github.com/Prk315" target="_blank">github.com/Prk315</a></p>
@@ -56,7 +53,6 @@
                         </div>
                     </div>
                     <div class="contact-method-card">
-                        <div class="method-icon">📍</div>
                         <div class="method-details">
                             <h4>Location</h4>
                             <p>Copenhagen, Denmark</p>
@@ -94,15 +90,15 @@
                 <h3>Current Availability</h3>
                 <div class="availability-grid">
                     <div class="availability-card">
-                        <h4>🎓 Student Status</h4>
+                        <h4>Student Status</h4>
                         <p>Halfway through Bachelor's degree in ML & Data Science at Copenhagen University</p>
                     </div>
                     <div class="availability-card">
-                        <h4>💼 Open to Opportunities</h4>
+                        <h4>Open to Opportunities</h4>
                         <p>Interested in internships, part-time positions, and collaborative projects in ML/AI</p>
                     </div>
                     <div class="availability-card">
-                        <h4>🤝 Collaboration</h4>
+                        <h4>Collaboration</h4>
                         <p>Always excited to work on interesting ML projects and contribute to open source</p>
                     </div>
                 </div>
@@ -121,8 +117,8 @@
 
         // Scroll Animation
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 50px 0px'
         };
 
         const scrollObserver = new IntersectionObserver((entries) => {
@@ -136,7 +132,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.contact-method-card, .availability-card').forEach((card, index) => {
                 card.classList.add('fade-in');
-                card.style.transitionDelay = `${index * 0.1}s`;
+                card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
             });
         });

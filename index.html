@@ -267,19 +267,19 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>📧 Email</h3>
+                        <h3>Email</h3>
                         <p><a href="mailto:contact@bastian-thomsen.com">contact@bastian-thomsen.com</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3>💼 LinkedIn</h3>
+                        <h3>LinkedIn</h3>
                         <p><a href="https://linkedin.com/in/bastian-thomsen" target="_blank">linkedin.com/in/bastian-thomsen</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3>🐙 GitHub</h3>
+                        <h3>GitHub</h3>
                         <p><a href="https://github.com/Prk315" target="_blank">github.com/Prk315</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3>📍 Location</h3>
+                        <h3>Location</h3>
                         <p>Copenhagen, Denmark</p>
                     </div>
                 </div>
@@ -299,8 +299,8 @@
 
         // Scroll Animation Observer
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.05,
+            rootMargin: '0px 0px 50px 0px'
         };
 
         const scrollObserver = new IntersectionObserver((entries) => {
@@ -332,7 +332,7 @@
             // Animate project cards with staggered effect
             document.querySelectorAll('.project-card').forEach((card, index) => {
                 card.classList.add('scale-in');
-                card.style.transitionDelay = `${index * 0.1}s`;
+                card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
             });
 
@@ -343,21 +343,21 @@
                 } else {
                     skill.classList.add('slide-in-right');
                 }
-                skill.style.transitionDelay = `${index * 0.15}s`;
+                skill.style.transitionDelay = `${index * 0.08}s`;
                 scrollObserver.observe(skill);
             });
 
             // Animate testimonial cards
             document.querySelectorAll('.testimonial-card').forEach((card, index) => {
                 card.classList.add('scale-in');
-                card.style.transitionDelay = `${index * 0.1}s`;
+                card.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(card);
             });
 
             // Animate experience items
             document.querySelectorAll('.timeline-item, .experience-item').forEach((item, index) => {
                 item.classList.add('slide-in-left');
-                item.style.transitionDelay = `${index * 0.1}s`;
+                item.style.transitionDelay = `${index * 0.05}s`;
                 scrollObserver.observe(item);
             });
         });
