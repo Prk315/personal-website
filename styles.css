@@ -1900,6 +1900,82 @@ footer p {
    CERTIFICATIONS PAGE STYLES
    ==================================== */
 
+/* Hero Background for Certifications - White Version with Animations */
+.certifications-hero {
+    position: relative;
+    min-height: auto;
+    padding: 60px 0 80px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f8f9fa 100%) !important;
+}
+
+/* Override the dark background from hero-section */
+.certifications-hero::before {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(147, 51, 234, 0.08)) !important;
+}
+
+.certifications-hero::after {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.06), rgba(249, 115, 22, 0.06)) !important;
+}
+
+/* Keep the diagonal lines visible on white */
+.certifications-hero .hero-content::before {
+    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.15) 30%, rgba(147, 51, 234, 0.15) 50%, rgba(236, 72, 153, 0.15) 70%, transparent 100%);
+    opacity: 0.5;
+}
+
+.certifications-hero .hero-content::after {
+    background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.15) 30%, rgba(249, 115, 22, 0.15) 50%, rgba(251, 191, 36, 0.15) 70%, transparent 100%);
+    opacity: 0.4;
+}
+
+/* Accent dots - more visible on white */
+.certifications-hero .accent-dot-1,
+.certifications-hero .accent-dot-2,
+.certifications-hero .accent-dot-3 {
+    opacity: 0.8;
+}
+
+.certifications-content {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.certifications-hero h2 {
+    color: var(--primary-color);
+    border-bottom-color: var(--border-color);
+}
+
+.certifications-hero h2::after {
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+}
+
+.certifications-hero > p {
+    color: var(--text-color);
+}
+
+/* Enhanced certification cards on white background */
+.certifications-hero .certification-card {
+    background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--border-color);
+}
+
+.certifications-hero .certification-card:hover {
+    background: #ffffff;
+    border-color: rgba(147, 51, 234, 0.4);
+    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
+}
+
+.certifications-hero .learning-stats {
+    background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--border-color);
+}
+
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
