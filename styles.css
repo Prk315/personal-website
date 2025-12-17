@@ -2335,7 +2335,7 @@ footer p {
 
 .showcase-image {
     width: 100%;
-    height: 200px;
+    height: 120px;
     overflow: hidden;
 }
 
@@ -2353,19 +2353,19 @@ footer p {
 }
 
 .showcase-content {
-    padding: 40px;
+    padding: 25px 35px;
 }
 
 .showcase-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     gap: 15px;
 }
 
 .showcase-header h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0;
     color: #ffffff;
 }
@@ -2383,18 +2383,18 @@ footer p {
 
 .showcase-brief {
     color: #b0b0b0;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    font-size: 1rem;
 }
 
 .showcase-highlights {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .showcase-highlights h4 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
     color: #ffffff;
     font-weight: 600;
 }
@@ -2405,14 +2405,14 @@ footer p {
 
 .showcase-highlights li {
     color: #d0d0d0;
-    margin-bottom: 10px;
-    line-height: 1.7;
+    margin-bottom: 6px;
+    line-height: 1.5;
 }
 
 .showcase-metrics {
     display: flex;
     gap: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
 }
 
@@ -2440,18 +2440,18 @@ footer p {
 .showcase-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 25px;
-    padding-top: 20px;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding-top: 15px;
     border-top: 1px solid #2a2a2a;
 }
 
 .tech-tag {
     background: rgba(255, 255, 255, 0.05);
     color: #e0e0e0;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 12px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     border: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
