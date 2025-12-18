@@ -164,7 +164,7 @@ body::after {
 header {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: #ffffff;
-    padding: 25px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -261,10 +261,10 @@ header::after {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 300;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     position: relative;
     z-index: 1;
     animation: fadeInUp 0.8s ease-out;
@@ -282,7 +282,7 @@ header h1 {
 }
 
 .tagline {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 300;
     color: #b0b0b0;
     letter-spacing: 1px;
@@ -307,7 +307,7 @@ nav .container {
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 20px;
+    padding: 12px 20px;
 }
 
 nav a {
@@ -344,7 +344,7 @@ nav a:hover::after {
 
 /* Main Content */
 main {
-    padding: 60px 20px;
+    padding: 20px 20px;
 }
 
 /* ====================================
@@ -353,7 +353,9 @@ main {
 
 .hero-section {
     position: relative;
-    min-height: 500px;
+    height: calc(100vh - 140px);
+    min-height: 450px;
+    max-height: 800px;
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
     border-radius: 30px;
     overflow: hidden;
@@ -361,7 +363,7 @@ main {
     box-shadow: var(--shadow-xl);
     display: flex;
     align-items: center;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 /* Dynamic Geometric Background Elements */
@@ -667,13 +669,15 @@ main {
 /* Responsive Hero Section */
 @media (max-width: 768px) {
     .hero-section {
+        height: calc(100vh - 130px);
         min-height: 400px;
-        padding: 40px 0;
+        max-height: 700px;
+        padding: 30px 0;
         border-radius: 20px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-description {
@@ -698,12 +702,14 @@ main {
 
 @media (max-width: 480px) {
     .hero-section {
+        height: calc(100vh - 120px);
         min-height: 350px;
-        padding: 30px 0;
+        max-height: 600px;
+        padding: 25px 0;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-content {
@@ -1798,21 +1804,26 @@ footer p {
         justify-content: center;
     }
 
+    header {
+        padding: 10px 0;
+    }
+
     header h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .tagline {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     nav .container {
         gap: 20px;
         flex-wrap: wrap;
+        padding: 10px 20px;
     }
 
     nav a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     h2 {
@@ -1852,7 +1863,7 @@ footer p {
     }
 
     main {
-        padding: 40px 20px;
+        padding: 15px 20px;
     }
 
     section {
@@ -1862,11 +1873,23 @@ footer p {
 
 @media (max-width: 480px) {
     header {
-        padding: 30px 0;
+        padding: 8px 0;
     }
 
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+    }
+
+    nav .container {
+        padding: 8px 15px;
+    }
+
+    main {
+        padding: 10px 15px;
     }
 
     .header-actions {
