@@ -159,7 +159,7 @@
             animation: floatBlob3 45s ease-in-out infinite;
         }
 
-        /* Layer 5: Diagonal animated lines - more subtle */
+        /* Layer 5: Diagonal animated lines - more subtle with varied directions */
         .diagonal-line-1 {
             position: absolute;
             top: 0;
@@ -177,7 +177,7 @@
             opacity: 0.3;
             pointer-events: none;
             z-index: 4;
-            animation: slideLine 8s linear infinite;
+            animation: slideLineHorizontal 8s linear infinite;
         }
 
         .diagonal-line-2 {
@@ -197,7 +197,67 @@
             opacity: 0.25;
             pointer-events: none;
             z-index: 4;
-            animation: slideLine 10s linear infinite reverse;
+            animation: slideLineHorizontal 10s linear infinite reverse;
+        }
+
+        .diagonal-line-3 {
+            position: absolute;
+            left: 30%;
+            top: -50%;
+            width: 2px;
+            height: 200%;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(147, 51, 234, 0.1) 30%,
+                rgba(59, 130, 246, 0.1) 50%,
+                rgba(20, 184, 166, 0.1) 70%,
+                transparent 100%
+            );
+            transform: rotate(8deg);
+            opacity: 0.28;
+            pointer-events: none;
+            z-index: 4;
+            animation: slideLineVertical 12s linear infinite;
+        }
+
+        .diagonal-line-4 {
+            position: absolute;
+            right: 20%;
+            top: -50%;
+            width: 2px;
+            height: 200%;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(236, 72, 153, 0.1) 30%,
+                rgba(251, 191, 36, 0.1) 50%,
+                rgba(249, 115, 22, 0.1) 70%,
+                transparent 100%
+            );
+            transform: rotate(-5deg);
+            opacity: 0.22;
+            pointer-events: none;
+            z-index: 4;
+            animation: slideLineVertical 15s linear infinite 3s;
+        }
+
+        .diagonal-line-5 {
+            position: absolute;
+            top: 25%;
+            left: -50%;
+            width: 200%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(20, 184, 166, 0.08) 30%,
+                rgba(236, 72, 153, 0.08) 50%,
+                rgba(147, 51, 234, 0.08) 70%,
+                transparent 100%
+            );
+            transform: rotate(18deg);
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 4;
+            animation: slideLineHorizontal 14s linear infinite 5s;
         }
 
         /* Layer 6: Animated stars/sparks - floating points of light */
@@ -401,12 +461,21 @@
             }
         }
 
-        @keyframes slideLine {
+        @keyframes slideLineHorizontal {
             0% {
-                transform: translateX(-100%) rotate(-15deg);
+                transform: translateX(-100%);
             }
             100% {
-                transform: translateX(100%) rotate(-15deg);
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes slideLineVertical {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
             }
         }
 
@@ -490,6 +559,9 @@
         <!-- Layer 5: Diagonal lines -->
         <div class="diagonal-line-1"></div>
         <div class="diagonal-line-2"></div>
+        <div class="diagonal-line-3"></div>
+        <div class="diagonal-line-4"></div>
+        <div class="diagonal-line-5"></div>
 
         <!-- Layer 6: Animated sparks/stars -->
         <div class="spark spark-1"></div>
@@ -518,7 +590,7 @@
                 <li>Layer 2: Strong vignette (35% dark edges + corner shadows)</li>
                 <li>Layer 3: Subtle static colors (edges only)</li>
                 <li>Layer 4: Gentle animated blobs (edges only)</li>
-                <li>Layer 5: Soft diagonal lines</li>
+                <li>Layer 5: Multi-directional animated lines (5 total)</li>
                 <li>Layer 6: Floating sparks/stars (10 particles)</li>
             </ul>
         </div>
