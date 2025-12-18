@@ -260,87 +260,136 @@
             animation: slideLineHorizontal 14s linear infinite 5s;
         }
 
-        /* Layer 6: Animated stars/sparks - floating points of light */
+        /* Layer 6: Animated stars/sparks - intense, scroll-responsive points of light */
         .spark {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: radial-gradient(circle, currentColor 0%, transparent 70%);
             border-radius: 50%;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 4px currentColor;
+            box-shadow:
+                0 0 15px currentColor,
+                0 0 30px currentColor,
+                0 0 8px rgba(255, 255, 255, 0.9);
             pointer-events: none;
             z-index: 5;
-            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            will-change: transform, opacity;
         }
 
         .spark-1 {
             top: 15%;
             left: 20%;
-            color: rgba(59, 130, 246, 0.6);
-            animation: sparkFloat1 25s ease-in-out infinite;
+            color: rgba(59, 130, 246, 0.9);
+            filter: brightness(1.3);
         }
 
         .spark-2 {
             top: 60%;
             left: 75%;
-            color: rgba(236, 72, 153, 0.6);
-            animation: sparkFloat2 30s ease-in-out infinite 2s;
+            color: rgba(236, 72, 153, 0.85);
+            filter: brightness(1.4);
         }
 
         .spark-3 {
             top: 35%;
             left: 85%;
-            color: rgba(147, 51, 234, 0.6);
-            animation: sparkFloat3 28s ease-in-out infinite 5s;
+            color: rgba(147, 51, 234, 0.9);
+            filter: brightness(1.2);
         }
 
         .spark-4 {
             top: 80%;
             left: 30%;
-            color: rgba(20, 184, 166, 0.6);
-            animation: sparkFloat1 32s ease-in-out infinite 8s;
+            color: rgba(20, 184, 166, 0.85);
+            filter: brightness(1.5);
         }
 
         .spark-5 {
             top: 25%;
             left: 45%;
-            color: rgba(251, 191, 36, 0.6);
-            animation: sparkFloat2 27s ease-in-out infinite 3s;
+            color: rgba(251, 191, 36, 0.95);
+            filter: brightness(1.3);
         }
 
         .spark-6 {
             top: 50%;
             left: 12%;
-            color: rgba(249, 115, 22, 0.6);
-            animation: sparkFloat3 29s ease-in-out infinite 7s;
+            color: rgba(249, 115, 22, 0.9);
+            filter: brightness(1.4);
         }
 
         .spark-7 {
             top: 70%;
             left: 65%;
-            color: rgba(59, 130, 246, 0.6);
-            animation: sparkFloat1 26s ease-in-out infinite 4s;
+            color: rgba(99, 102, 241, 0.85);
+            filter: brightness(1.3);
         }
 
         .spark-8 {
             top: 40%;
             left: 55%;
-            color: rgba(147, 51, 234, 0.6);
-            animation: sparkFloat2 31s ease-in-out infinite 6s;
+            color: rgba(168, 85, 247, 0.9);
+            filter: brightness(1.2);
         }
 
         .spark-9 {
             top: 10%;
             left: 50%;
-            color: rgba(236, 72, 153, 0.6);
-            animation: sparkFloat3 24s ease-in-out infinite 1s;
+            color: rgba(244, 114, 182, 0.9);
+            filter: brightness(1.4);
         }
 
         .spark-10 {
             top: 90%;
             left: 80%;
-            color: rgba(20, 184, 166, 0.6);
-            animation: sparkFloat1 33s ease-in-out infinite 9s;
+            color: rgba(34, 211, 238, 0.85);
+            filter: brightness(1.5);
+        }
+
+        .spark-11 {
+            top: 22%;
+            left: 68%;
+            color: rgba(196, 181, 253, 0.9);
+            filter: brightness(1.3);
+            width: 4px;
+            height: 4px;
+        }
+
+        .spark-12 {
+            top: 55%;
+            left: 38%;
+            color: rgba(251, 146, 60, 0.85);
+            filter: brightness(1.4);
+            width: 6px;
+            height: 6px;
+        }
+
+        .spark-13 {
+            top: 18%;
+            left: 90%;
+            color: rgba(74, 222, 128, 0.8);
+            filter: brightness(1.3);
+            width: 4px;
+            height: 4px;
+        }
+
+        .spark-14 {
+            top: 75%;
+            left: 15%;
+            color: rgba(254, 202, 202, 0.9);
+            filter: brightness(1.2);
+            width: 5px;
+            height: 5px;
+        }
+
+        .spark-15 {
+            top: 42%;
+            left: 8%;
+            color: rgba(125, 211, 252, 0.85);
+            filter: brightness(1.5);
+            width: 6px;
+            height: 6px;
         }
 
         /* Content overlay - to show text would be readable */
@@ -479,68 +528,20 @@
             }
         }
 
-        /* Spark/star floating animations */
-        @keyframes sparkFloat1 {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(0.8);
-            }
-            10% {
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 0.9;
-                transform: translate(-30px, -60px) scale(1.2);
-            }
-            90% {
-                opacity: 0.4;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-60px, -120px) scale(0.8);
-            }
-        }
-
-        @keyframes sparkFloat2 {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(0.8);
-            }
-            10% {
-                opacity: 0.5;
-            }
-            50% {
+        /* Subtle idle pulse for sparks */
+        @keyframes sparkPulse {
+            0%, 100% {
+                transform: scale(1);
                 opacity: 0.8;
-                transform: translate(40px, 70px) scale(1.3);
             }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(80px, 140px) scale(0.8);
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
             }
         }
 
-        @keyframes sparkFloat3 {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(0.9);
-            }
-            10% {
-                opacity: 0.7;
-            }
-            50% {
-                opacity: 1;
-                transform: translate(25px, -50px) scale(1.1);
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(50px, -100px) scale(0.9);
-            }
+        .spark {
+            animation: sparkPulse 3s ease-in-out infinite;
         }
     </style>
 </head>
@@ -564,22 +565,43 @@
         <div class="diagonal-line-5"></div>
 
         <!-- Layer 6: Animated sparks/stars -->
-        <div class="spark spark-1"></div>
-        <div class="spark spark-2"></div>
-        <div class="spark spark-3"></div>
-        <div class="spark spark-4"></div>
-        <div class="spark spark-5"></div>
-        <div class="spark spark-6"></div>
-        <div class="spark spark-7"></div>
-        <div class="spark spark-8"></div>
-        <div class="spark spark-9"></div>
-        <div class="spark spark-10"></div>
+        <div class="spark spark-1" data-speed="0.5"></div>
+        <div class="spark spark-2" data-speed="0.8"></div>
+        <div class="spark spark-3" data-speed="0.3"></div>
+        <div class="spark spark-4" data-speed="0.6"></div>
+        <div class="spark spark-5" data-speed="0.4"></div>
+        <div class="spark spark-6" data-speed="0.7"></div>
+        <div class="spark spark-7" data-speed="0.9"></div>
+        <div class="spark spark-8" data-speed="0.5"></div>
+        <div class="spark spark-9" data-speed="0.6"></div>
+        <div class="spark spark-10" data-speed="0.4"></div>
+        <div class="spark spark-11" data-speed="0.7"></div>
+        <div class="spark spark-12" data-speed="0.3"></div>
+        <div class="spark spark-13" data-speed="0.8"></div>
+        <div class="spark spark-14" data-speed="0.5"></div>
+        <div class="spark spark-15" data-speed="0.6"></div>
 
         <!-- Content -->
         <div class="content">
             <h1>Background Layer Test</h1>
             <p>This demonstrates the layered background effect with:</p>
-            <p><strong>Matte white base → Vignette darkening → Static colors → Animated blobs → Moving lines</strong></p>
+            <p><strong>Matte white base → Vignette darkening → Static colors → Animated blobs → Moving lines → Scroll-responsive sparks</strong></p>
+            <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.7;">💡 Scroll down to see the sparks react to your movement!</p>
+        </div>
+
+        <!-- Extra content for scrolling -->
+        <div style="height: 200vh; position: relative; z-index: 10; padding: 100px 40px;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 2rem; color: #1a1a1a; margin-bottom: 20px;">Scroll Effect Demo</h2>
+                <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+                    As you scroll, the colorful sparks move in different directions based on their individual speed values.
+                    Each spark has its own trajectory, creating a dynamic parallax effect that responds to your scrolling.
+                </p>
+                <p style="font-size: 1.1rem; color: #555; line-height: 1.8; margin-top: 30px;">
+                    The sparks also pulse, scale, and rotate as you scroll, creating a mesmerizing 3D-like effect
+                    that adds depth and interactivity to the background.
+                </p>
+            </div>
         </div>
 
         <!-- Layer explanation -->
@@ -591,9 +613,52 @@
                 <li>Layer 3: Subtle static colors (edges only)</li>
                 <li>Layer 4: Gentle animated blobs (edges only)</li>
                 <li>Layer 5: Multi-directional animated lines (5 total)</li>
-                <li>Layer 6: Floating sparks/stars (10 particles)</li>
+                <li>Layer 6: Scroll-responsive sparks (15 particles)</li>
             </ul>
         </div>
     </div>
+
+    <script>
+        // Scroll-based spark animation
+        let ticking = false;
+        const sparks = document.querySelectorAll('.spark');
+
+        function updateSparkPositions() {
+            const scrollY = window.scrollY || window.pageYOffset;
+
+            sparks.forEach((spark, index) => {
+                const speed = parseFloat(spark.getAttribute('data-speed')) || 0.5;
+                const direction = index % 2 === 0 ? 1 : -1; // Alternate directions
+
+                // Calculate movement based on scroll
+                const translateX = scrollY * speed * direction * 0.1;
+                const translateY = scrollY * speed * 0.15;
+                const rotate = scrollY * speed * 0.05 * direction;
+                const scale = 1 + (Math.sin(scrollY * 0.01 + index) * 0.3);
+
+                // Apply transform
+                spark.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg) scale(${scale})`;
+
+                // Vary opacity based on scroll position
+                const opacity = 0.7 + (Math.sin(scrollY * 0.008 + index * 0.5) * 0.3);
+                spark.style.opacity = opacity;
+            });
+
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateSparkPositions);
+                ticking = true;
+            }
+        }
+
+        // Listen to scroll events
+        window.addEventListener('scroll', requestTick, { passive: true });
+
+        // Initial position
+        updateSparkPositions();
+    </script>
 </body>
 </html>
