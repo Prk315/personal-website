@@ -486,7 +486,7 @@ main {
 .hero-description {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #b0b0b0;
+    color: #e5e5e5;
     margin-bottom: 40px;
     max-width: 700px;
     margin-left: auto;
@@ -510,6 +510,7 @@ main {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    color: #e5e5e5;
 }
 
 .highlight-item::before {
