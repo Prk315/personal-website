@@ -23,8 +23,8 @@
             position: relative;
             width: 100%;
             height: 100%;
-            /* Layer 1: White matte base */
-            background: #f5f5f5;
+            /* Layer 1: Matte white base - more intense white */
+            background: #FCFDFE;
             overflow: hidden;
         }
 
@@ -36,15 +36,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Radial gradient from center (transparent/white) to edges (dark grey) */
+            /* Radial gradient from center (transparent/white) to edges (darker grey) with more shadow */
             background: radial-gradient(
                 ellipse at center,
                 transparent 0%,
-                transparent 30%,
-                rgba(0, 0, 0, 0.03) 50%,
-                rgba(0, 0, 0, 0.08) 70%,
-                rgba(0, 0, 0, 0.15) 100%
+                transparent 15%,
+                rgba(0, 0, 0, 0.05) 35%,
+                rgba(0, 0, 0, 0.15) 55%,
+                rgba(0, 0, 0, 0.28) 75%,
+                rgba(0, 0, 0, 0.35) 100%
             );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Layer 2b: Additional corner shadows for more depth */
+        .background-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at top left, rgba(0, 0, 0, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at top right, rgba(0, 0, 0, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.12) 0%, transparent 40%);
             pointer-events: none;
             z-index: 1;
         }
@@ -52,14 +70,14 @@
         /* Layer 3a: Static color wash - top right (blue-purple) */
         .color-static-1 {
             position: absolute;
-            top: -10%;
-            right: -5%;
+            top: -15%;
+            right: -10%;
             width: 600px;
             height: 600px;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(147, 51, 234, 0.10));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.09), rgba(147, 51, 234, 0.08));
             border-radius: 50% 40% 50% 40%;
-            filter: blur(120px);
-            opacity: 0.8;
+            filter: blur(140px) drop-shadow(0 10px 40px rgba(59, 130, 246, 0.15));
+            opacity: 0.7;
             pointer-events: none;
             z-index: 2;
         }
@@ -67,81 +85,81 @@
         /* Layer 3b: Static color wash - bottom left (pink-orange) */
         .color-static-2 {
             position: absolute;
-            bottom: -10%;
-            left: -5%;
+            bottom: -15%;
+            left: -10%;
             width: 550px;
             height: 550px;
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.10), rgba(249, 115, 22, 0.12));
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(249, 115, 22, 0.09));
             border-radius: 40% 50% 40% 50%;
-            filter: blur(120px);
-            opacity: 0.8;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        /* Layer 3c: Static color wash - center right (teal) */
-        .color-static-3 {
-            position: absolute;
-            top: 30%;
-            right: -8%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.12), rgba(20, 184, 166, 0.05));
-            filter: blur(130px);
+            filter: blur(140px) drop-shadow(0 10px 40px rgba(236, 72, 153, 0.15));
             opacity: 0.7;
             pointer-events: none;
             z-index: 2;
         }
 
-        /* Layer 4: Animated floating blob 1 (amber/orange) */
+        /* Layer 3c: Static color wash - far right edge (teal) */
+        .color-static-3 {
+            position: absolute;
+            top: 30%;
+            right: -12%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.09), rgba(20, 184, 166, 0.04));
+            filter: blur(150px) drop-shadow(0 10px 40px rgba(20, 184, 166, 0.12));
+            opacity: 0.65;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Layer 4: Animated floating blob 1 (amber/orange) - stays on left edge */
         .animated-blob-1 {
             position: absolute;
             top: 20%;
-            left: -10%;
+            left: -15%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(251, 191, 36, 0.15), rgba(249, 115, 22, 0.10));
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.10), rgba(249, 115, 22, 0.08));
             border-radius: 45% 55% 50% 50%;
-            filter: blur(100px);
-            opacity: 0.9;
+            filter: blur(130px) drop-shadow(0 15px 50px rgba(251, 191, 36, 0.18));
+            opacity: 0.75;
             pointer-events: none;
             z-index: 3;
             animation: floatBlob1 35s ease-in-out infinite;
         }
 
-        /* Layer 4: Animated floating blob 2 (purple-blue) */
+        /* Layer 4: Animated floating blob 2 (purple-blue) - stays on right edge */
         .animated-blob-2 {
             position: absolute;
             bottom: 10%;
-            right: -10%;
+            right: -15%;
             width: 450px;
             height: 450px;
-            background: radial-gradient(circle, rgba(147, 51, 234, 0.14), rgba(59, 130, 246, 0.10));
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.11), rgba(59, 130, 246, 0.08));
             border-radius: 50% 45% 55% 50%;
-            filter: blur(110px);
-            opacity: 0.85;
+            filter: blur(130px) drop-shadow(0 15px 50px rgba(147, 51, 234, 0.16));
+            opacity: 0.7;
             pointer-events: none;
             z-index: 3;
             animation: floatBlob2 40s ease-in-out infinite;
         }
 
-        /* Layer 4: Animated floating blob 3 (pink) */
+        /* Layer 4: Animated floating blob 3 (pink) - repositioned to top left */
         .animated-blob-3 {
             position: absolute;
-            top: 50%;
-            left: 30%;
+            top: 5%;
+            left: -12%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(236, 72, 153, 0.12), rgba(219, 39, 119, 0.08));
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.09), rgba(219, 39, 119, 0.06));
             border-radius: 50% 50% 45% 55%;
-            filter: blur(120px);
-            opacity: 0.8;
+            filter: blur(140px) drop-shadow(0 15px 50px rgba(236, 72, 153, 0.14));
+            opacity: 0.7;
             pointer-events: none;
             z-index: 3;
             animation: floatBlob3 45s ease-in-out infinite;
         }
 
-        /* Layer 5: Diagonal animated lines */
+        /* Layer 5: Diagonal animated lines - more subtle */
         .diagonal-line-1 {
             position: absolute;
             top: 0;
@@ -150,13 +168,13 @@
             height: 3px;
             background: linear-gradient(90deg,
                 transparent 0%,
-                rgba(59, 130, 246, 0.2) 30%,
-                rgba(147, 51, 234, 0.2) 50%,
-                rgba(236, 72, 153, 0.2) 70%,
+                rgba(59, 130, 246, 0.12) 30%,
+                rgba(147, 51, 234, 0.12) 50%,
+                rgba(236, 72, 153, 0.12) 70%,
                 transparent 100%
             );
             transform: rotate(-15deg);
-            opacity: 0.4;
+            opacity: 0.3;
             pointer-events: none;
             z-index: 4;
             animation: slideLine 8s linear infinite;
@@ -170,16 +188,99 @@
             height: 2px;
             background: linear-gradient(90deg,
                 transparent 0%,
-                rgba(20, 184, 166, 0.2) 30%,
-                rgba(249, 115, 22, 0.2) 50%,
-                rgba(251, 191, 36, 0.2) 70%,
+                rgba(20, 184, 166, 0.12) 30%,
+                rgba(249, 115, 22, 0.12) 50%,
+                rgba(251, 191, 36, 0.12) 70%,
                 transparent 100%
             );
             transform: rotate(12deg);
-            opacity: 0.3;
+            opacity: 0.25;
             pointer-events: none;
             z-index: 4;
             animation: slideLine 10s linear infinite reverse;
+        }
+
+        /* Layer 6: Animated stars/sparks - floating points of light */
+        .spark {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 4px currentColor;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+        }
+
+        .spark-1 {
+            top: 15%;
+            left: 20%;
+            color: rgba(59, 130, 246, 0.6);
+            animation: sparkFloat1 25s ease-in-out infinite;
+        }
+
+        .spark-2 {
+            top: 60%;
+            left: 75%;
+            color: rgba(236, 72, 153, 0.6);
+            animation: sparkFloat2 30s ease-in-out infinite 2s;
+        }
+
+        .spark-3 {
+            top: 35%;
+            left: 85%;
+            color: rgba(147, 51, 234, 0.6);
+            animation: sparkFloat3 28s ease-in-out infinite 5s;
+        }
+
+        .spark-4 {
+            top: 80%;
+            left: 30%;
+            color: rgba(20, 184, 166, 0.6);
+            animation: sparkFloat1 32s ease-in-out infinite 8s;
+        }
+
+        .spark-5 {
+            top: 25%;
+            left: 45%;
+            color: rgba(251, 191, 36, 0.6);
+            animation: sparkFloat2 27s ease-in-out infinite 3s;
+        }
+
+        .spark-6 {
+            top: 50%;
+            left: 12%;
+            color: rgba(249, 115, 22, 0.6);
+            animation: sparkFloat3 29s ease-in-out infinite 7s;
+        }
+
+        .spark-7 {
+            top: 70%;
+            left: 65%;
+            color: rgba(59, 130, 246, 0.6);
+            animation: sparkFloat1 26s ease-in-out infinite 4s;
+        }
+
+        .spark-8 {
+            top: 40%;
+            left: 55%;
+            color: rgba(147, 51, 234, 0.6);
+            animation: sparkFloat2 31s ease-in-out infinite 6s;
+        }
+
+        .spark-9 {
+            top: 10%;
+            left: 50%;
+            color: rgba(236, 72, 153, 0.6);
+            animation: sparkFloat3 24s ease-in-out infinite 1s;
+        }
+
+        .spark-10 {
+            top: 90%;
+            left: 80%;
+            color: rgba(20, 184, 166, 0.6);
+            animation: sparkFloat1 33s ease-in-out infinite 9s;
         }
 
         /* Content overlay - to show text would be readable */
@@ -200,7 +301,7 @@
             font-weight: 800;
             color: #1a1a1a;
             margin-bottom: 20px;
-            text-shadow: 0 2px 20px rgba(255, 255, 255, 0.8);
+            text-shadow: none;
         }
 
         .content p {
@@ -209,21 +310,23 @@
             max-width: 700px;
             line-height: 1.6;
             margin-bottom: 15px;
-            text-shadow: 0 1px 10px rgba(255, 255, 255, 0.6);
+            text-shadow: none;
         }
 
         .layer-info {
             position: absolute;
             bottom: 30px;
             left: 30px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.92);
             padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             z-index: 20;
             max-width: 350px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow:
+                0 2px 12px rgba(0, 0, 0, 0.08),
+                0 8px 32px rgba(0, 0, 0, 0.06),
+                0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
         .layer-info h3 {
@@ -252,19 +355,19 @@
             color: #9333ea;
         }
 
-        /* Animations */
+        /* Animations - keep blobs on edges, don't drift to center */
         @keyframes floatBlob1 {
             0%, 100% {
                 transform: translate(0, 0) rotate(0deg);
             }
             25% {
-                transform: translate(60%, 15%) rotate(5deg);
+                transform: translate(15%, 20%) rotate(3deg);
             }
             50% {
-                transform: translate(80%, -10%) rotate(-3deg);
+                transform: translate(5%, -15%) rotate(-2deg);
             }
             75% {
-                transform: translate(40%, 20%) rotate(4deg);
+                transform: translate(20%, 10%) rotate(4deg);
             }
         }
 
@@ -273,10 +376,10 @@
                 transform: translate(0, 0) rotate(0deg);
             }
             33% {
-                transform: translate(-50%, -30%) rotate(-5deg);
+                transform: translate(-20%, -25%) rotate(-4deg);
             }
             66% {
-                transform: translate(-70%, 15%) rotate(3deg);
+                transform: translate(-15%, 20%) rotate(3deg);
             }
         }
 
@@ -285,16 +388,16 @@
                 transform: translate(0, 0) scale(1) rotate(0deg);
             }
             20% {
-                transform: translate(-30%, -20%) scale(1.1) rotate(2deg);
+                transform: translate(10%, 15%) scale(1.05) rotate(2deg);
             }
             40% {
-                transform: translate(20%, 30%) scale(0.95) rotate(-3deg);
+                transform: translate(-5%, 25%) scale(0.97) rotate(-2deg);
             }
             60% {
-                transform: translate(-15%, 40%) scale(1.05) rotate(4deg);
+                transform: translate(5%, -20%) scale(1.03) rotate(3deg);
             }
             80% {
-                transform: translate(25%, -10%) scale(0.98) rotate(-2deg);
+                transform: translate(15%, 5%) scale(0.99) rotate(-1deg);
             }
         }
 
@@ -304,6 +407,70 @@
             }
             100% {
                 transform: translateX(100%) rotate(-15deg);
+            }
+        }
+
+        /* Spark/star floating animations */
+        @keyframes sparkFloat1 {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(0.8);
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.9;
+                transform: translate(-30px, -60px) scale(1.2);
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-60px, -120px) scale(0.8);
+            }
+        }
+
+        @keyframes sparkFloat2 {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(0.8);
+            }
+            10% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.8;
+                transform: translate(40px, 70px) scale(1.3);
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(80px, 140px) scale(0.8);
+            }
+        }
+
+        @keyframes sparkFloat3 {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(0.9);
+            }
+            10% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+                transform: translate(25px, -50px) scale(1.1);
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(50px, -100px) scale(0.9);
             }
         }
     </style>
@@ -324,6 +491,18 @@
         <div class="diagonal-line-1"></div>
         <div class="diagonal-line-2"></div>
 
+        <!-- Layer 6: Animated sparks/stars -->
+        <div class="spark spark-1"></div>
+        <div class="spark spark-2"></div>
+        <div class="spark spark-3"></div>
+        <div class="spark spark-4"></div>
+        <div class="spark spark-5"></div>
+        <div class="spark spark-6"></div>
+        <div class="spark spark-7"></div>
+        <div class="spark spark-8"></div>
+        <div class="spark spark-9"></div>
+        <div class="spark spark-10"></div>
+
         <!-- Content -->
         <div class="content">
             <h1>Background Layer Test</h1>
@@ -335,11 +514,12 @@
         <div class="layer-info">
             <h3>Active Layers:</h3>
             <ul>
-                <li>Layer 1: Matte white base (#f5f5f5)</li>
-                <li>Layer 2: Radial vignette (dark edges)</li>
-                <li>Layer 3: Static color washes (3 areas)</li>
-                <li>Layer 4: Animated blobs (3 floating)</li>
-                <li>Layer 5: Diagonal sliding lines (2)</li>
+                <li>Layer 1: Intense white base (#FCFDFE)</li>
+                <li>Layer 2: Strong vignette (35% dark edges + corner shadows)</li>
+                <li>Layer 3: Subtle static colors (edges only)</li>
+                <li>Layer 4: Gentle animated blobs (edges only)</li>
+                <li>Layer 5: Soft diagonal lines</li>
+                <li>Layer 6: Floating sparks/stars (10 particles)</li>
             </ul>
         </div>
     </div>
