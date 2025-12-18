@@ -359,7 +359,8 @@ main {
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
     border-radius: 30px;
     overflow: hidden;
-    margin-bottom: 80px;
+    margin-top: 8px;
+    margin-bottom: 28px;
     box-shadow: var(--shadow-xl);
     display: flex;
     align-items: center;
@@ -674,6 +675,8 @@ main {
         max-height: 650px;
         padding: 30px 0;
         border-radius: 20px;
+        margin-top: 8px;
+        margin-bottom: 28px;
     }
 
     .hero-title {
@@ -706,6 +709,8 @@ main {
         min-height: 325px;
         max-height: 555px;
         padding: 25px 0;
+        margin-top: 8px;
+        margin-bottom: 28px;
     }
 
     .hero-title {
