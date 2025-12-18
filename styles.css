@@ -2583,12 +2583,20 @@ footer p {
    SKILLS LIBRARY PAGE STYLES
    ==================================== */
 
+/* Remove main padding when skills library is full-width */
+main:has(.skills-library-hero) {
+    padding: 0;
+}
+
 /* Hero Background for Skills Library - White Version with Animations */
 .skills-library-hero {
     position: relative;
     min-height: auto;
     padding: 60px 0 80px 0;
     background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f8f9fa 100%) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    width: 100%;
 }
 
 /* Override the dark background from hero-section */
@@ -2621,8 +2629,8 @@ footer p {
 .skills-library-content {
     position: relative;
     z-index: 2;
-    max-width: 100%;
-    margin: 0;
+    max-width: 1210px;
+    margin: 0 auto;
     padding: 0 40px;
     text-align: left;
 }
