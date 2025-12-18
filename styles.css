@@ -2431,6 +2431,36 @@ footer p {
     box-shadow: 0 6px 16px rgba(147, 51, 234, 0.5);
 }
 
+.project-section {
+    margin-bottom: 60px;
+}
+
+.project-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    border-radius: 2px;
+}
+
 .showcase-grid {
     display: flex !important;
     flex-direction: column !important;
