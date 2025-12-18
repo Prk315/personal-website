@@ -353,9 +353,9 @@ main {
 
 .hero-section {
     position: relative;
-    height: calc(100vh - 140px);
-    min-height: 450px;
-    max-height: 800px;
+    height: calc(92.5vh - 140px);
+    min-height: 420px;
+    max-height: 740px;
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
     border-radius: 30px;
     overflow: hidden;
@@ -669,9 +669,9 @@ main {
 /* Responsive Hero Section */
 @media (max-width: 768px) {
     .hero-section {
-        height: calc(100vh - 130px);
-        min-height: 400px;
-        max-height: 700px;
+        height: calc(92.5vh - 130px);
+        min-height: 370px;
+        max-height: 650px;
         padding: 30px 0;
         border-radius: 20px;
     }
@@ -702,9 +702,9 @@ main {
 
 @media (max-width: 480px) {
     .hero-section {
-        height: calc(100vh - 120px);
-        min-height: 350px;
-        max-height: 600px;
+        height: calc(92.5vh - 120px);
+        min-height: 325px;
+        max-height: 555px;
         padding: 25px 0;
     }
 
