@@ -2082,6 +2082,8 @@ footer p {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .cert-badge {
@@ -3109,6 +3111,20 @@ main:has(.skills-library-hero) {
 @media (max-width: 768px) {
     .certifications-grid {
         grid-template-columns: 1fr !important;
+    }
+
+    .in-progress-section {
+        margin-top: 40px;
+        padding: 30px 0;
+    }
+
+    .in-progress-section h3 {
+        font-size: 1.6rem;
+    }
+
+    .cert-status-badge {
+        font-size: 0.8rem;
+        padding: 5px 12px;
     }
 
     .showcase-grid {
