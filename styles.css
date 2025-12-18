@@ -986,6 +986,29 @@ p {
     transform: translateX(5px);
 }
 
+/* Resume Card Styling */
+.resume-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-left-color: var(--accent-blue);
+    padding: 30px;
+}
+
+.resume-card .cv-section-title {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.resume-content {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.resume-content p {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
 /* Experience Slider Container */
 .experience-slider-container {
     max-height: 500px;
