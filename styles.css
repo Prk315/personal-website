@@ -3191,6 +3191,7 @@ main:has(.skills-library-hero) {
     overflow: hidden;
     z-index: -1;
     pointer-events: none;
+    contain: layout style paint;
 }
 
 /* Layer 2: Vignette effect - darker edges, white center */
@@ -3240,7 +3241,7 @@ main:has(.skills-library-hero) {
     height: 600px;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.09), rgba(147, 51, 234, 0.08));
     border-radius: 50% 40% 50% 40%;
-    filter: blur(140px) drop-shadow(0 10px 40px rgba(59, 130, 246, 0.15));
+    filter: blur(90px) drop-shadow(0 10px 40px rgba(59, 130, 246, 0.15));
     opacity: 0.7;
     pointer-events: none;
     z-index: 2;
@@ -3255,7 +3256,7 @@ main:has(.skills-library-hero) {
     height: 550px;
     background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(249, 115, 22, 0.09));
     border-radius: 40% 50% 40% 50%;
-    filter: blur(140px) drop-shadow(0 10px 40px rgba(236, 72, 153, 0.15));
+    filter: blur(90px) drop-shadow(0 10px 40px rgba(236, 72, 153, 0.15));
     opacity: 0.7;
     pointer-events: none;
     z-index: 2;
@@ -3269,7 +3270,7 @@ main:has(.skills-library-hero) {
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, rgba(20, 184, 166, 0.09), rgba(20, 184, 166, 0.04));
-    filter: blur(150px) drop-shadow(0 10px 40px rgba(20, 184, 166, 0.12));
+    filter: blur(90px) drop-shadow(0 10px 40px rgba(20, 184, 166, 0.12));
     opacity: 0.65;
     pointer-events: none;
     z-index: 2;
@@ -3284,7 +3285,7 @@ main:has(.skills-library-hero) {
     height: 500px;
     background: radial-gradient(circle, rgba(251, 191, 36, 0.10), rgba(249, 115, 22, 0.08));
     border-radius: 45% 55% 50% 50%;
-    filter: blur(130px) drop-shadow(0 15px 50px rgba(251, 191, 36, 0.18));
+    filter: blur(85px) drop-shadow(0 15px 50px rgba(251, 191, 36, 0.18));
     opacity: 0.75;
     pointer-events: none;
     z-index: 3;
@@ -3300,7 +3301,7 @@ main:has(.skills-library-hero) {
     height: 450px;
     background: radial-gradient(circle, rgba(147, 51, 234, 0.11), rgba(59, 130, 246, 0.08));
     border-radius: 50% 45% 55% 50%;
-    filter: blur(130px) drop-shadow(0 15px 50px rgba(147, 51, 234, 0.16));
+    filter: blur(85px) drop-shadow(0 15px 50px rgba(147, 51, 234, 0.16));
     opacity: 0.7;
     pointer-events: none;
     z-index: 3;
@@ -3316,7 +3317,7 @@ main:has(.skills-library-hero) {
     height: 400px;
     background: radial-gradient(circle, rgba(236, 72, 153, 0.09), rgba(219, 39, 119, 0.06));
     border-radius: 50% 50% 45% 55%;
-    filter: blur(140px) drop-shadow(0 15px 50px rgba(236, 72, 153, 0.14));
+    filter: blur(85px) drop-shadow(0 15px 50px rgba(236, 72, 153, 0.14));
     opacity: 0.7;
     pointer-events: none;
     z-index: 3;
@@ -3740,4 +3741,38 @@ main:has(.skills-library-hero) {
         transform: scale(1.2);
         opacity: 1;
     }
+}
+
+/* Performance optimization: CSS containment for background elements */
+.color-static-1,
+.color-static-2,
+.color-static-3,
+.animated-blob-1,
+.animated-blob-2,
+.animated-blob-3,
+.diagonal-line-1,
+.diagonal-line-2,
+.diagonal-line-3,
+.diagonal-line-4,
+.diagonal-line-5,
+.diagonal-line-6,
+.diagonal-line-7,
+.diagonal-line-8,
+.spark {
+    contain: layout style paint;
+}
+
+/* Performance optimization: CSS containment for card components */
+.project-card,
+.skill-category,
+.testimonial-card,
+.certification-card,
+.timeline-item,
+.experience-item {
+    contain: layout paint;
+}
+
+/* Performance optimization: CSS containment for sections */
+section {
+    contain: layout style;
 }

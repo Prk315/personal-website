@@ -182,3 +182,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial position
     updateSparkPositions();
 });
+
+// Performance optimization: Pause animations when tab is hidden
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll(
+        '.animated-blob-1, .animated-blob-2, .animated-blob-3, ' +
+        '.diagonal-line-1, .diagonal-line-2, .diagonal-line-3, ' +
+        '.diagonal-line-4, .diagonal-line-5, .diagonal-line-6, ' +
+        '.diagonal-line-7, .diagonal-line-8, .spark'
+    );
+
+    // Pause/resume animations based on tab visibility
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            // Tab is hidden - pause all animations
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+            });
+        } else {
+            // Tab is visible - resume all animations
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'running';
+            });
+        }
+    });
+});
