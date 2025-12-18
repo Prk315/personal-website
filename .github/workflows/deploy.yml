@@ -20,7 +20,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,45 +33,72 @@ jobs:
         with:
           path: '.'
 
+      - name: Check artifact size
+        run: |
+          echo "Checking deployment artifact size..."
+          du -sh . || true
+          echo "File count:"
+          find . -type f | wc -l || true
+
       - name: Deploy to GitHub Pages (Attempt 1)
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         with:
-          timeout: 600000
-          error_count: 10
+          timeout: 900000
+          error_count: 15
+          reporting_interval: 5000
 
-      - name: Wait before retry
+      - name: Wait before retry (2s)
         if: steps.deployment.outcome == 'failure'
         run: |
-          echo "First deployment attempt failed, waiting 5 seconds before retry..."
-          sleep 5
+          echo "First deployment attempt failed, waiting 2 seconds before retry..."
+          sleep 2
 
       - name: Deploy to GitHub Pages (Attempt 2)
         if: steps.deployment.outcome == 'failure'
         id: deployment-retry-1
         uses: actions/deploy-pages@v4
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         with:
-          timeout: 600000
-          error_count: 10
+          timeout: 900000
+          error_count: 15
+          reporting_interval: 5000
 
-      - name: Wait before final retry
+      - name: Wait before retry (4s)
         if: steps.deployment.outcome == 'failure' && steps.deployment-retry-1.outcome == 'failure'
         run: |
-          echo "Second deployment attempt failed, waiting 10 seconds before final retry..."
-          sleep 10
+          echo "Second deployment attempt failed, waiting 4 seconds before retry..."
+          sleep 4
 
-      - name: Deploy to GitHub Pages (Attempt 3 - Final)
+      - name: Deploy to GitHub Pages (Attempt 3)
         if: steps.deployment.outcome == 'failure' && steps.deployment-retry-1.outcome == 'failure'
         id: deployment-retry-2
         uses: actions/deploy-pages@v4
-        timeout-minutes: 10
+        continue-on-error: true
+        timeout-minutes: 15
         with:
-          timeout: 600000
-          error_count: 10
+          timeout: 900000
+          error_count: 15
+          reporting_interval: 5000
+
+      - name: Wait before retry (8s)
+        if: steps.deployment.outcome == 'failure' && steps.deployment-retry-1.outcome == 'failure' && steps.deployment-retry-2.outcome == 'failure'
+        run: |
+          echo "Third deployment attempt failed, waiting 8 seconds before retry..."
+          sleep 8
+
+      - name: Deploy to GitHub Pages (Attempt 4 - Final)
+        if: steps.deployment.outcome == 'failure' && steps.deployment-retry-1.outcome == 'failure' && steps.deployment-retry-2.outcome == 'failure'
+        id: deployment-retry-3
+        uses: actions/deploy-pages@v4
+        timeout-minutes: 15
+        with:
+          timeout: 900000
+          error_count: 15
+          reporting_interval: 5000
 
       - name: Check deployment status
         if: always()
@@ -84,6 +111,9 @@ jobs:
             exit 0
           elif [ "${{ steps.deployment-retry-2.outcome }}" == "success" ]; then
             echo "✅ Deployment succeeded on third attempt"
+            exit 0
+          elif [ "${{ steps.deployment-retry-3.outcome }}" == "success" ]; then
+            echo "✅ Deployment succeeded on fourth attempt"
             exit 0
           else
             echo "❌ All deployment attempts failed"
