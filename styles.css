@@ -991,13 +991,13 @@ p {
 /* Resume Card Styling */
 .resume-card {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    border-left-color: rgba(255, 255, 255, 0.3);
+    border-left: none;
     padding: 30px;
 }
 
 .resume-card .cv-section-title {
     color: #ffffff;
-    border-bottom-color: rgba(255, 255, 255, 0.3);
+    border-bottom: none;
 }
 
 .resume-content {
