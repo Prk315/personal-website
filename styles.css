@@ -797,6 +797,7 @@ p {
     color: var(--primary-color);
     border-bottom: 3px solid var(--accent-blue);
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .cv-summary {
@@ -806,6 +807,7 @@ p {
     border-radius: 12px;
     border: 2px solid var(--border-color);
     box-shadow: var(--shadow-sm);
+    text-align: center;
 }
 
 .cv-intro {
@@ -857,6 +859,7 @@ p {
     color: var(--primary-color);
     margin-bottom: 20px;
     letter-spacing: 0.3px;
+    text-align: center;
 }
 
 .cv-competencies-grid {
@@ -884,6 +887,7 @@ p {
     margin-bottom: 12px;
     border-bottom: 2px solid var(--accent-blue);
     padding-bottom: 8px;
+    text-align: center;
 }
 
 .cv-competency-group ul {
@@ -933,6 +937,7 @@ p {
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .cv-attribute-item p {
@@ -946,6 +951,7 @@ p {
     background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
     border-radius: 8px;
     border: 2px solid var(--border-color);
+    text-align: center;
 }
 
 .cv-objectives p {
@@ -959,6 +965,7 @@ p {
     padding: 20px;
     background: var(--light-gray);
     border-radius: 8px;
+    text-align: center;
 }
 
 .cv-education-brief p {
