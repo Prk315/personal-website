@@ -6,6 +6,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Certificate card expand/collapse functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const certCards = document.querySelectorAll('.certification-card');
+
+    certCards.forEach(card => {
+        // Only add click handler if card is not in-progress
+        if (!card.classList.contains('in-progress')) {
+            card.addEventListener('click', (e) => {
+                // Don't toggle if clicking on the view certificate button
+                if (e.target.classList.contains('view-cert-btn')) {
+                    return;
+                }
+
+                // Toggle collapsed state
+                card.classList.toggle('collapsed');
+            });
+        }
+    });
+});
+
+// Certificate modal functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('certificateModal');
+    const modalImg = document.getElementById('certificateImage');
+    const modalClose = document.querySelector('.cert-modal-close');
+    const viewBtns = document.querySelectorAll('.view-cert-btn');
+
+    // Certificate image URLs (add your actual certificate URLs here)
+    const certificateUrls = {
+        'advanced-python': '',
+        'learn-python3': '',
+        'ml-ai-engineer': '',
+        'flask-web-apps': ''
+    };
+
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card collapse/expand
+            const certId = btn.getAttribute('data-cert');
+            const certUrl = certificateUrls[certId];
+
+            if (certUrl) {
+                modalImg.src = certUrl;
+                modalImg.style.display = 'block';
+                document.getElementById('certificatePlaceholder').style.display = 'none';
+            } else {
+                modalImg.style.display = 'none';
+                document.getElementById('certificatePlaceholder').style.display = 'flex';
+            }
+
+            modal.style.display = 'block';
+        });
+    });
+
+    // Close modal when clicking X
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
 // Scroll Animation Observer
 const observerOptions = {
     threshold: 0.05,
