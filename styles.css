@@ -1906,27 +1906,27 @@ footer p {
     position: relative;
     min-height: auto;
     padding: 60px 0 80px 0;
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f8f9fa 100%) !important;
+    background: transparent !important;
 }
 
-/* Override the dark background from hero-section */
+/* Remove background overlays to show global animated background */
 .certifications-hero::before {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(147, 51, 234, 0.08)) !important;
+    background: transparent !important;
 }
 
 .certifications-hero::after {
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.06), rgba(249, 115, 22, 0.06)) !important;
+    background: transparent !important;
 }
 
-/* Keep the diagonal lines visible on white */
+/* Remove hero-content backgrounds to show global animated background */
 .certifications-hero .hero-content::before {
-    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.15) 30%, rgba(147, 51, 234, 0.15) 50%, rgba(236, 72, 153, 0.15) 70%, transparent 100%);
-    opacity: 0.5;
+    background: transparent !important;
+    opacity: 0;
 }
 
 .certifications-hero .hero-content::after {
-    background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.15) 30%, rgba(249, 115, 22, 0.15) 50%, rgba(251, 191, 36, 0.15) 70%, transparent 100%);
-    opacity: 0.4;
+    background: transparent !important;
+    opacity: 0;
 }
 
 /* Accent dots - more visible on white */
@@ -2589,35 +2589,35 @@ main:has(.skills-library-hero) {
     padding: 0;
 }
 
-/* Hero Background for Skills Library - White Version with Animations */
+/* Hero Background for Skills Library - Use Global Animated Background */
 .skills-library-hero {
     position: relative;
     min-height: auto;
     padding: 60px 0 80px 0;
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f8f9fa 100%) !important;
+    background: transparent !important;
     border-radius: 0 !important;
     margin: 0 !important;
     width: 100%;
 }
 
-/* Override the dark background from hero-section */
+/* Remove background overlays to show global animated background */
 .skills-library-hero::before {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(147, 51, 234, 0.08)) !important;
+    background: transparent !important;
 }
 
 .skills-library-hero::after {
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.06), rgba(249, 115, 22, 0.06)) !important;
+    background: transparent !important;
 }
 
-/* Keep the diagonal lines visible on white */
+/* Remove hero-content backgrounds to show global animated background */
 .skills-library-hero .hero-content::before {
-    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.15) 30%, rgba(147, 51, 234, 0.15) 50%, rgba(236, 72, 153, 0.15) 70%, transparent 100%);
-    opacity: 0.5;
+    background: transparent !important;
+    opacity: 0;
 }
 
 .skills-library-hero .hero-content::after {
-    background: linear-gradient(90deg, transparent 0%, rgba(20, 184, 166, 0.15) 30%, rgba(249, 115, 22, 0.15) 50%, rgba(251, 191, 36, 0.15) 70%, transparent 100%);
-    opacity: 0.4;
+    background: transparent !important;
+    opacity: 0;
 }
 
 /* Accent dots - more visible on white */
