@@ -175,11 +175,10 @@
                 rgba(239, 68, 68, 0.15) 75%,
                 transparent 100%
             );
-            transform: rotate(-12deg);
             opacity: 0.35;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineHorizontal 3.5s linear infinite;
+            animation: slideLine1 3.5s linear infinite;
         }
 
         .diagonal-line-2 {
@@ -195,11 +194,10 @@
                 rgba(220, 38, 38, 0.12) 70%,
                 transparent 100%
             );
-            transform: rotate(15deg);
             opacity: 0.28;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineHorizontal 4s linear infinite reverse;
+            animation: slideLine2 4s linear infinite;
         }
 
         /* Blue/Green theme lines */
@@ -216,11 +214,10 @@
                 rgba(34, 197, 94, 0.14) 75%,
                 transparent 100%
             );
-            transform: rotate(6deg);
             opacity: 0.32;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineVertical 3s linear infinite;
+            animation: slideLine3 3s linear infinite;
         }
 
         .diagonal-line-4 {
@@ -236,11 +233,10 @@
                 rgba(6, 182, 212, 0.12) 70%,
                 transparent 100%
             );
-            transform: rotate(-4deg);
             opacity: 0.26;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineVertical 4s linear infinite 1s;
+            animation: slideLine4 4s linear infinite 1s;
         }
 
         .diagonal-line-5 {
@@ -256,11 +252,10 @@
                 rgba(20, 184, 166, 0.11) 70%,
                 transparent 100%
             );
-            transform: rotate(20deg);
             opacity: 0.24;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineHorizontal 4.5s linear infinite 1.5s;
+            animation: slideLine5 4.5s linear infinite 1.5s;
         }
 
         /* Purple theme lines */
@@ -277,11 +272,10 @@
                 rgba(192, 132, 252, 0.15) 75%,
                 transparent 100%
             );
-            transform: rotate(-8deg);
             opacity: 0.3;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineHorizontal 4s linear infinite 0.8s;
+            animation: slideLine6 4s linear infinite 0.8s;
         }
 
         .diagonal-line-7 {
@@ -297,11 +291,10 @@
                 rgba(196, 181, 253, 0.13) 70%,
                 transparent 100%
             );
-            transform: rotate(10deg);
             opacity: 0.27;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineVertical 3.5s linear infinite 1.8s;
+            animation: slideLine7 3.5s linear infinite 1.8s;
         }
 
         .diagonal-line-8 {
@@ -317,11 +310,10 @@
                 rgba(168, 85, 247, 0.12) 70%,
                 transparent 100%
             );
-            transform: rotate(-18deg);
             opacity: 0.25;
             pointer-events: none;
             z-index: 4;
-            animation: slideLineHorizontal 4.5s linear infinite reverse 1.3s;
+            animation: slideLine8 4.5s linear infinite 1.3s;
         }
 
         /* Layer 6: Animated stars/sparks - intense, scroll-responsive points of light */
@@ -574,21 +566,76 @@
             }
         }
 
-        @keyframes slideLineHorizontal {
+        /* Individual keyframes for each line to preserve rotation */
+        @keyframes slideLine1 {
             0% {
-                transform: translateX(-100%);
+                transform: rotate(-12deg) translateX(-100%);
             }
             100% {
-                transform: translateX(100%);
+                transform: rotate(-12deg) translateX(100%);
             }
         }
 
-        @keyframes slideLineVertical {
+        @keyframes slideLine2 {
             0% {
-                transform: translateY(-100%);
+                transform: rotate(15deg) translateX(100%);
             }
             100% {
-                transform: translateY(100%);
+                transform: rotate(15deg) translateX(-100%);
+            }
+        }
+
+        @keyframes slideLine3 {
+            0% {
+                transform: rotate(6deg) translateY(-100%);
+            }
+            100% {
+                transform: rotate(6deg) translateY(100%);
+            }
+        }
+
+        @keyframes slideLine4 {
+            0% {
+                transform: rotate(-4deg) translateY(-100%);
+            }
+            100% {
+                transform: rotate(-4deg) translateY(100%);
+            }
+        }
+
+        @keyframes slideLine5 {
+            0% {
+                transform: rotate(20deg) translateX(-100%);
+            }
+            100% {
+                transform: rotate(20deg) translateX(100%);
+            }
+        }
+
+        @keyframes slideLine6 {
+            0% {
+                transform: rotate(-8deg) translateX(-100%);
+            }
+            100% {
+                transform: rotate(-8deg) translateX(100%);
+            }
+        }
+
+        @keyframes slideLine7 {
+            0% {
+                transform: rotate(10deg) translateY(-100%);
+            }
+            100% {
+                transform: rotate(10deg) translateY(100%);
+            }
+        }
+
+        @keyframes slideLine8 {
+            0% {
+                transform: rotate(-18deg) translateX(100%);
+            }
+            100% {
+                transform: rotate(-18deg) translateX(-100%);
             }
         }
 
