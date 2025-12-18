@@ -7,6 +7,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Global Animated Background -->
+    <div class="background-container">
+        <!-- Layer 3: Static color washes -->
+        <div class="color-static-1"></div>
+        <div class="color-static-2"></div>
+        <div class="color-static-3"></div>
+
+        <!-- Layer 4: Animated blobs -->
+        <div class="animated-blob-1"></div>
+        <div class="animated-blob-2"></div>
+        <div class="animated-blob-3"></div>
+
+        <!-- Layer 5: Diagonal lines -->
+        <div class="diagonal-line-1"></div>
+        <div class="diagonal-line-2"></div>
+        <div class="diagonal-line-3"></div>
+        <div class="diagonal-line-4"></div>
+        <div class="diagonal-line-5"></div>
+        <div class="diagonal-line-6"></div>
+        <div class="diagonal-line-7"></div>
+        <div class="diagonal-line-8"></div>
+
+        <!-- Layer 6: Animated sparks/stars -->
+        <div class="spark spark-1" data-speed="0.5"></div>
+        <div class="spark spark-2" data-speed="0.8"></div>
+        <div class="spark spark-3" data-speed="0.3"></div>
+        <div class="spark spark-4" data-speed="0.6"></div>
+        <div class="spark spark-5" data-speed="0.4"></div>
+        <div class="spark spark-6" data-speed="0.7"></div>
+        <div class="spark spark-7" data-speed="0.9"></div>
+        <div class="spark spark-8" data-speed="0.5"></div>
+        <div class="spark spark-9" data-speed="0.6"></div>
+        <div class="spark spark-10" data-speed="0.4"></div>
+        <div class="spark spark-11" data-speed="0.7"></div>
+        <div class="spark spark-12" data-speed="0.3"></div>
+        <div class="spark spark-13" data-speed="0.8"></div>
+        <div class="spark spark-14" data-speed="0.5"></div>
+        <div class="spark spark-15" data-speed="0.6"></div>
+    </div>
+
     <header>
         <div class="container">
             <h1>Bastian Rønfeldt Thomsen</h1>
@@ -364,6 +404,50 @@
                 scrollObserver.observe(card);
             });
         });
+    </script>
+
+    <!-- Spark Animation Script -->
+    <script>
+        // Scroll-based spark animation
+        let ticking = false;
+        const sparks = document.querySelectorAll('.spark');
+
+        function updateSparkPositions() {
+            const scrollY = window.scrollY || window.pageYOffset;
+
+            sparks.forEach((spark, index) => {
+                const speed = parseFloat(spark.getAttribute('data-speed')) || 0.5;
+                const direction = index % 2 === 0 ? 1 : -1;
+
+                // Calculate movement based on scroll
+                const translateX = scrollY * speed * direction * 0.1;
+                const translateY = scrollY * speed * 0.15;
+                const rotate = scrollY * speed * 0.05 * direction;
+                const scale = 1 + (Math.sin(scrollY * 0.01 + index) * 0.3);
+
+                // Apply transform
+                spark.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg) scale(${scale})`;
+
+                // Vary opacity based on scroll position
+                const opacity = 0.7 + (Math.sin(scrollY * 0.008 + index * 0.5) * 0.3);
+                spark.style.opacity = opacity;
+            });
+
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateSparkPositions);
+                ticking = true;
+            }
+        }
+
+        // Listen to scroll events
+        window.addEventListener('scroll', requestTick, { passive: true });
+
+        // Initial position
+        updateSparkPositions();
     </script>
 </body>
 </html>
