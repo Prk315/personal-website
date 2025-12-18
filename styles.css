@@ -880,7 +880,7 @@ p {
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 12px;
-    border-bottom: 2px solid var(--accent-blue);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 8px;
     text-align: center;
 }
@@ -903,7 +903,7 @@ p {
     content: '▸';
     position: absolute;
     left: 0;
-    color: var(--accent-blue);
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -916,15 +916,7 @@ p {
     padding: 18px;
     background: var(--light-gray);
     border-radius: 8px;
-    border-left: 3px solid var(--accent-blue);
-}
-
-.cv-attribute-item:nth-child(2) {
-    border-left-color: var(--accent-purple);
-}
-
-.cv-attribute-item:nth-child(3) {
-    border-left-color: var(--accent-teal);
+    border-left: none;
 }
 
 .cv-attribute-item h4 {
