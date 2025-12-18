@@ -1,0 +1,91 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages (Attempt 1)
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        timeout-minutes: 10
+        with:
+          timeout: 600000
+          error_count: 10
+
+      - name: Wait before retry
+        if: steps.deployment.outcome == 'failure'
+        run: |
+          echo "First deployment attempt failed, waiting 5 seconds before retry..."
+          sleep 5
+
+      - name: Deploy to GitHub Pages (Attempt 2)
+        if: steps.deployment.outcome == 'failure'
+        id: deployment-retry-1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        timeout-minutes: 10
+        with:
+          timeout: 600000
+          error_count: 10
+
+      - name: Wait before final retry
+        if: steps.deployment.outcome == 'failure' && steps.deployment-retry-1.outcome == 'failure'
+        run: |
+          echo "Second deployment attempt failed, waiting 10 seconds before final retry..."
+          sleep 10
+
+      - name: Deploy to GitHub Pages (Attempt 3 - Final)
+        if: steps.deployment.outcome == 'failure' && steps.deployment-retry-1.outcome == 'failure'
+        id: deployment-retry-2
+        uses: actions/deploy-pages@v4
+        timeout-minutes: 10
+        with:
+          timeout: 600000
+          error_count: 10
+
+      - name: Check deployment status
+        if: always()
+        run: |
+          if [ "${{ steps.deployment.outcome }}" == "success" ]; then
+            echo "✅ Deployment succeeded on first attempt"
+            exit 0
+          elif [ "${{ steps.deployment-retry-1.outcome }}" == "success" ]; then
+            echo "✅ Deployment succeeded on second attempt"
+            exit 0
+          elif [ "${{ steps.deployment-retry-2.outcome }}" == "success" ]; then
+            echo "✅ Deployment succeeded on third attempt"
+            exit 0
+          else
+            echo "❌ All deployment attempts failed"
+            exit 1
+          fi
