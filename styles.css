@@ -3146,3 +3146,570 @@ main:has(.skills-library-hero) {
         text-align: center;
     }
 }
+
+/* ===================================
+   GLOBAL ANIMATED BACKGROUND SYSTEM
+   =================================== */
+
+/* Main container for the background effect - fixed behind all content */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Layer 1: Matte white base */
+    background: #FCFDFE;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Layer 2: Vignette effect - darker edges, white center */
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        transparent 15%,
+        rgba(0, 0, 0, 0.05) 35%,
+        rgba(0, 0, 0, 0.15) 55%,
+        rgba(0, 0, 0, 0.28) 75%,
+        rgba(0, 0, 0, 0.35) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Layer 2b: Additional corner shadows for more depth */
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at top left, rgba(0, 0, 0, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at top right, rgba(0, 0, 0, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.12) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Layer 3a: Static color wash - top right (blue-purple) */
+.color-static-1 {
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.09), rgba(147, 51, 234, 0.08));
+    border-radius: 50% 40% 50% 40%;
+    filter: blur(140px) drop-shadow(0 10px 40px rgba(59, 130, 246, 0.15));
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Layer 3b: Static color wash - bottom left (pink-orange) */
+.color-static-2 {
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 550px;
+    height: 550px;
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(249, 115, 22, 0.09));
+    border-radius: 40% 50% 40% 50%;
+    filter: blur(140px) drop-shadow(0 10px 40px rgba(236, 72, 153, 0.15));
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Layer 3c: Static color wash - far right edge (teal) */
+.color-static-3 {
+    position: absolute;
+    top: 30%;
+    right: -12%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.09), rgba(20, 184, 166, 0.04));
+    filter: blur(150px) drop-shadow(0 10px 40px rgba(20, 184, 166, 0.12));
+    opacity: 0.65;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Layer 4: Animated floating blob 1 (amber/orange) - stays on left edge */
+.animated-blob-1 {
+    position: absolute;
+    top: 20%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.10), rgba(249, 115, 22, 0.08));
+    border-radius: 45% 55% 50% 50%;
+    filter: blur(130px) drop-shadow(0 15px 50px rgba(251, 191, 36, 0.18));
+    opacity: 0.75;
+    pointer-events: none;
+    z-index: 3;
+    animation: floatBlob1 35s ease-in-out infinite;
+}
+
+/* Layer 4: Animated floating blob 2 (purple-blue) - stays on right edge */
+.animated-blob-2 {
+    position: absolute;
+    bottom: 10%;
+    right: -15%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.11), rgba(59, 130, 246, 0.08));
+    border-radius: 50% 45% 55% 50%;
+    filter: blur(130px) drop-shadow(0 15px 50px rgba(147, 51, 234, 0.16));
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 3;
+    animation: floatBlob2 40s ease-in-out infinite;
+}
+
+/* Layer 4: Animated floating blob 3 (pink) - repositioned to top left */
+.animated-blob-3 {
+    position: absolute;
+    top: 5%;
+    left: -12%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.09), rgba(219, 39, 119, 0.06));
+    border-radius: 50% 50% 45% 55%;
+    filter: blur(140px) drop-shadow(0 15px 50px rgba(236, 72, 153, 0.14));
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 3;
+    animation: floatBlob3 45s ease-in-out infinite;
+}
+
+/* Layer 5: Diagonal animated lines - color-themed variations */
+
+/* Orange/Yellow/Red theme lines */
+.diagonal-line-1 {
+    position: absolute;
+    top: 10%;
+    left: -50%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(249, 115, 22, 0.15) 25%,
+        rgba(251, 191, 36, 0.18) 50%,
+        rgba(239, 68, 68, 0.15) 75%,
+        transparent 100%
+    );
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine1 6.125s linear infinite;
+}
+
+.diagonal-line-2 {
+    position: absolute;
+    bottom: 15%;
+    right: -50%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(234, 88, 12, 0.12) 30%,
+        rgba(252, 211, 77, 0.14) 50%,
+        rgba(220, 38, 38, 0.12) 70%,
+        transparent 100%
+    );
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine2 7s linear infinite;
+}
+
+/* Blue/Green theme lines */
+.diagonal-line-3 {
+    position: absolute;
+    left: 25%;
+    top: -50%;
+    width: 2px;
+    height: 200%;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(59, 130, 246, 0.14) 25%,
+        rgba(20, 184, 166, 0.16) 50%,
+        rgba(34, 197, 94, 0.14) 75%,
+        transparent 100%
+    );
+    opacity: 0.32;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine3 5.25s linear infinite;
+}
+
+.diagonal-line-4 {
+    position: absolute;
+    right: 30%;
+    top: -50%;
+    width: 2px;
+    height: 200%;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(14, 165, 233, 0.12) 30%,
+        rgba(16, 185, 129, 0.14) 50%,
+        rgba(6, 182, 212, 0.12) 70%,
+        transparent 100%
+    );
+    opacity: 0.26;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine4 7s linear infinite 1.75s;
+}
+
+.diagonal-line-5 {
+    position: absolute;
+    top: 35%;
+    left: -50%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(37, 99, 235, 0.11) 30%,
+        rgba(5, 150, 105, 0.13) 50%,
+        rgba(20, 184, 166, 0.11) 70%,
+        transparent 100%
+    );
+    opacity: 0.24;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine5 7.875s linear infinite 2.625s;
+}
+
+/* Purple theme lines */
+.diagonal-line-6 {
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(147, 51, 234, 0.15) 25%,
+        rgba(168, 85, 247, 0.17) 50%,
+        rgba(192, 132, 252, 0.15) 75%,
+        transparent 100%
+    );
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine6 7s linear infinite 1.4s;
+}
+
+.diagonal-line-7 {
+    position: absolute;
+    left: 60%;
+    top: -50%;
+    width: 2px;
+    height: 200%;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(139, 92, 246, 0.13) 30%,
+        rgba(167, 139, 250, 0.15) 50%,
+        rgba(196, 181, 253, 0.13) 70%,
+        transparent 100%
+    );
+    opacity: 0.27;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine7 6.125s linear infinite 3.15s;
+}
+
+.diagonal-line-8 {
+    position: absolute;
+    bottom: 30%;
+    right: -50%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(126, 34, 206, 0.12) 30%,
+        rgba(147, 51, 234, 0.14) 50%,
+        rgba(168, 85, 247, 0.12) 70%,
+        transparent 100%
+    );
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 4;
+    animation: slideLine8 7.875s linear infinite 2.275s;
+}
+
+/* Layer 6: Animated sparks/stars - scroll-responsive points of light */
+.spark {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle, currentColor 0%, transparent 70%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 5px currentColor,
+        0 0 10px currentColor;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.6;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    will-change: transform, opacity;
+    animation: sparkPulse 3s ease-in-out infinite;
+}
+
+.spark-1 {
+    top: 15%;
+    left: 20%;
+    color: rgba(249, 115, 22, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-2 {
+    top: 60%;
+    left: 75%;
+    color: rgba(59, 130, 246, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-3 {
+    top: 35%;
+    left: 85%;
+    color: rgba(147, 51, 234, 0.7);
+    filter: brightness(1.0);
+}
+
+.spark-4 {
+    top: 80%;
+    left: 30%;
+    color: rgba(20, 184, 166, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-5 {
+    top: 25%;
+    left: 45%;
+    color: rgba(251, 191, 36, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-6 {
+    top: 50%;
+    left: 12%;
+    color: rgba(249, 115, 22, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-7 {
+    top: 70%;
+    left: 65%;
+    color: rgba(147, 51, 234, 0.7);
+    filter: brightness(1.0);
+}
+
+.spark-8 {
+    top: 40%;
+    left: 55%;
+    color: rgba(168, 85, 247, 0.7);
+    filter: brightness(1.0);
+}
+
+.spark-9 {
+    top: 10%;
+    left: 50%;
+    color: rgba(139, 92, 246, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-10 {
+    top: 90%;
+    left: 80%;
+    color: rgba(20, 184, 166, 0.7);
+    filter: brightness(1.1);
+}
+
+.spark-11 {
+    top: 22%;
+    left: 68%;
+    color: rgba(196, 181, 253, 0.7);
+    filter: brightness(1.0);
+    width: 2px;
+    height: 2px;
+}
+
+.spark-12 {
+    top: 55%;
+    left: 38%;
+    color: rgba(251, 146, 60, 0.7);
+    filter: brightness(1.1);
+    width: 4px;
+    height: 4px;
+}
+
+.spark-13 {
+    top: 18%;
+    left: 90%;
+    color: rgba(34, 197, 94, 0.7);
+    filter: brightness(1.0);
+    width: 2px;
+    height: 2px;
+}
+
+.spark-14 {
+    top: 75%;
+    left: 15%;
+    color: rgba(239, 68, 68, 0.7);
+    filter: brightness(1.0);
+    width: 3px;
+    height: 3px;
+}
+
+.spark-15 {
+    top: 42%;
+    left: 8%;
+    color: rgba(14, 165, 233, 0.7);
+    filter: brightness(1.1);
+    width: 4px;
+    height: 4px;
+}
+
+/* Background Animations */
+@keyframes floatBlob1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(15%, 20%) rotate(3deg);
+    }
+    50% {
+        transform: translate(5%, -15%) rotate(-2deg);
+    }
+    75% {
+        transform: translate(20%, 10%) rotate(4deg);
+    }
+}
+
+@keyframes floatBlob2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(-20%, -25%) rotate(-4deg);
+    }
+    66% {
+        transform: translate(-15%, 20%) rotate(3deg);
+    }
+}
+
+@keyframes floatBlob3 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    20% {
+        transform: translate(10%, 15%) scale(1.05) rotate(2deg);
+    }
+    40% {
+        transform: translate(-5%, 25%) scale(0.97) rotate(-2deg);
+    }
+    60% {
+        transform: translate(5%, -20%) scale(1.03) rotate(3deg);
+    }
+    80% {
+        transform: translate(15%, 5%) scale(0.99) rotate(-1deg);
+    }
+}
+
+@keyframes slideLine1 {
+    0% {
+        transform: translateX(-100%) rotate(-12deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(-12deg);
+    }
+}
+
+@keyframes slideLine2 {
+    0% {
+        transform: translateX(100%) rotate(15deg);
+    }
+    100% {
+        transform: translateX(-100%) rotate(15deg);
+    }
+}
+
+@keyframes slideLine3 {
+    0% {
+        transform: translateY(-100%) rotate(6deg);
+    }
+    100% {
+        transform: translateY(100%) rotate(6deg);
+    }
+}
+
+@keyframes slideLine4 {
+    0% {
+        transform: translateY(-100%) rotate(-4deg);
+    }
+    100% {
+        transform: translateY(100%) rotate(-4deg);
+    }
+}
+
+@keyframes slideLine5 {
+    0% {
+        transform: translateX(-100%) rotate(20deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(20deg);
+    }
+}
+
+@keyframes slideLine6 {
+    0% {
+        transform: translateX(-100%) rotate(-8deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(-8deg);
+    }
+}
+
+@keyframes slideLine7 {
+    0% {
+        transform: translateY(-100%) rotate(10deg);
+    }
+    100% {
+        transform: translateY(100%) rotate(10deg);
+    }
+}
+
+@keyframes slideLine8 {
+    0% {
+        transform: translateX(100%) rotate(-18deg);
+    }
+    100% {
+        transform: translateX(-100%) rotate(-18deg);
+    }
+}
+
+@keyframes sparkPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
