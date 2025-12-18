@@ -792,11 +792,6 @@ p {
 
 /* About Section - CV Style */
 #about h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--accent-blue);
-    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -827,7 +822,7 @@ p {
     padding: 25px;
     background: #ffffff;
     border-radius: 12px;
-    border-left: 4px solid var(--accent-blue);
+    border-left: 3px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
@@ -996,7 +991,7 @@ p {
 /* Resume Card Styling */
 .resume-card {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    border-left-color: var(--accent-blue);
+    border-left-color: rgba(255, 255, 255, 0.3);
     padding: 30px;
 }
 
