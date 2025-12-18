@@ -2194,6 +2194,103 @@ footer p {
     transform: translateY(0);
 }
 
+/* Certificate card collapsed/expanded states */
+.certification-card {
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certification-card.collapsed {
+    padding: 20px;
+    position: relative;
+}
+
+.certification-card.collapsed::after {
+    content: 'Click to expand ▼';
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--accent-purple);
+    margin-top: 8px;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.certification-card.collapsed:hover::after {
+    opacity: 1;
+}
+
+.certification-card:not(.collapsed)::after {
+    content: 'Click to collapse ▲';
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--accent-purple);
+    margin-top: 8px;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.certification-card.collapsed .cert-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certification-card:not(.collapsed) .cert-content {
+    max-height: 1000px;
+    opacity: 1;
+    margin-bottom: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certification-card.collapsed h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.certification-card.collapsed .cert-details {
+    margin-bottom: 10px;
+}
+
+.certification-card.collapsed .view-cert-btn {
+    margin-top: 10px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+}
+
+/* Consistent spacing */
+.cert-header {
+    margin-bottom: 15px;
+}
+
+.cert-details {
+    margin-bottom: 15px;
+}
+
+.cert-description {
+    margin-bottom: 15px;
+}
+
+.cert-skills {
+    margin-bottom: 15px;
+}
+
+/* Consistent fonts - ensure all text uses the same base font family */
+.certification-card h3,
+.cert-platform,
+.cert-date,
+.cert-hours,
+.cert-description,
+.cert-skill,
+.view-cert-btn {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
 .learning-stats {
     margin-top: 60px;
     padding: 40px;
