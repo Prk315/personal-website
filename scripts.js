@@ -138,6 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.transitionDelay = `${index * 0.05}s`;
         scrollObserver.observe(item);
     });
+
+    // Animate new journey timeline events
+    document.querySelectorAll('.timeline-event').forEach((event, index) => {
+        event.style.transitionDelay = `${index * 0.1}s`;
+        scrollObserver.observe(event);
+    });
 });
 
 // Project filtering
