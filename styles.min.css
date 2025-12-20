@@ -4700,3 +4700,25 @@ section {
         text-align: center;
     }
 }
+
+/* Enhanced Skill Badges with Descriptions */
+.skill-description {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.skill-sources {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.skill-sources small {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-style: italic;
+}
