@@ -62,13 +62,18 @@
     <main class="container">
         <section id="skills-library" class="skills-library-hero">
             <h2>Complete Skills Library</h2>
-            <p>Here is an overview of all the skills I have accumulated yet.</p>
+            <p>Here is an overview of all the skills I have accumulated so far.</p>
             <div class="evidence-note">
                 <strong>Legend:</strong> ●●● Fluent | ●●○ Comfortable | ●○○ Beginner | ○○○ Inexperienced
             </div>
 
-            <div class="library-search">
-                <input type="text" id="skill-search" placeholder="Search skills... (e.g., Python, Machine Learning, Docker)" />
+            <div class="library-search-container">
+                <button class="search-toggle-btn" id="searchToggleBtn" aria-label="Toggle search">
+                    <span class="search-icon">🔍</span> Search Skills
+                </button>
+                <div class="library-search collapsed" id="librarySearch">
+                    <input type="text" id="skill-search" placeholder="Search skills... (e.g., Python, Machine Learning, Docker)" />
+                </div>
             </div>
 
             <div class="library-categories">
@@ -85,19 +90,31 @@
             <div class="library-section" data-category="languages">
                 <h3>Programming Languages</h3>
                 <div class="skills-badge-grid">
-                    <div class="skill-badge" data-proficiency="expert" title="Primary language for ML/AI and data science">
+                    <div class="skill-badge" data-proficiency="expert">
                         <h4>Python</h4>
                         <div class="skill-level expert">●●●</div>
+                        <p class="skill-description">Primary language for ML/AI development, data science, and automation. Extensive experience with scientific computing, deep learning frameworks, and production deployments.</p>
+                        <div class="skill-sources">
+                            <small>Sources: Codecademy Python 3, Advanced Python, 455+ hours coursework</small>
+                        </div>
                     </div>
 
-                    <div class="skill-badge" data-proficiency="advanced" title="Web development and scripting">
+                    <div class="skill-badge" data-proficiency="advanced">
                         <h4>JavaScript</h4>
                         <div class="skill-level advanced">●●○</div>
+                        <p class="skill-description">Modern JavaScript/ES6+ for web development, Node.js backend services, and interactive data visualizations. Familiar with async programming and DOM manipulation.</p>
+                        <div class="skill-sources">
+                            <small>Sources: Self-study, web development projects</small>
+                        </div>
                     </div>
 
-                    <div class="skill-badge" data-proficiency="expert" title="Database design, optimization, and complex queries">
+                    <div class="skill-badge" data-proficiency="expert">
                         <h4>SQL</h4>
                         <div class="skill-level expert">●●●</div>
+                        <p class="skill-description">Expert in database design, query optimization, complex joins, and data modeling. Experience with PostgreSQL, MySQL, and SQLite for production systems.</p>
+                        <div class="skill-sources">
+                            <small>Sources: University coursework, professional projects</small>
+                        </div>
                     </div>
 
                     <div class="skill-badge" data-proficiency="beginner" title="Statistical analysis and data visualization">
@@ -276,7 +293,30 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Bastian Rønfeldt Thomsen. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>Email: <a href="mailto:bastianrthomse@gmail.com">bastianrthomse@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+4542660898">+45 42 66 08 98</a></p>
+                    <p>Location: Copenhagen, Denmark</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="https://www.linkedin.com/in/bastian-thomsen-167652205/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                    <p><a href="https://github.com/Prk315" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="certifications.html">Certifications</a></p>
+                    <p><a href="projects-showcase.html">Projects</a></p>
+                    <p><a href="skills-library.html">Skills</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Bastian Rønfeldt Thomsen. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
