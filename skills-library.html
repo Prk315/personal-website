@@ -67,8 +67,13 @@
                 <strong>Legend:</strong> ●●● Fluent | ●●○ Comfortable | ●○○ Beginner | ○○○ Inexperienced
             </div>
 
-            <div class="library-search">
-                <input type="text" id="skill-search" placeholder="Search skills... (e.g., Python, Machine Learning, Docker)" />
+            <div class="library-search-container">
+                <button class="search-toggle-btn" id="searchToggleBtn" aria-label="Toggle search">
+                    <span class="search-icon">🔍</span> Search Skills
+                </button>
+                <div class="library-search collapsed" id="librarySearch">
+                    <input type="text" id="skill-search" placeholder="Search skills... (e.g., Python, Machine Learning, Docker)" />
+                </div>
             </div>
 
             <div class="library-categories">

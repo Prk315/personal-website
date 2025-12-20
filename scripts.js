@@ -282,3 +282,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Collapsible search bar functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const searchToggleBtn = document.getElementById('searchToggleBtn');
+    const librarySearch = document.getElementById('librarySearch');
+    const skillSearchInput = document.getElementById('skill-search');
+
+    if (searchToggleBtn && librarySearch) {
+        searchToggleBtn.addEventListener('click', () => {
+            librarySearch.classList.toggle('collapsed');
+
+            // Focus on input when expanded
+            if (!librarySearch.classList.contains('collapsed')) {
+                setTimeout(() => {
+                    if (skillSearchInput) {
+                        skillSearchInput.focus();
+                    }
+                }, 300);
+            }
+        });
+    }
+});
